@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <!-- Bootstrap css file -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- css -->
-    <link rel="stylesheet" href="../css/login.css">
-</head>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
 
-<body>
-
-    <section class="min-vh-100 d-flex align-items-center justify-content-center">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col">
-                    Welcome to car e-commerce
-                </div>
-                <div class="col">
-                    One of three columns
-                </div>
-            </div>
+  <body>
+    <section
+      class="min-vh-100 d-flex align-items-center justify-content-center"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col text-uppercase text-white">
+            <h1 class="fw-bold fs-1 mb-0">
+              Welcome to <br />
+              car e-commerce
+            </h1>
+            <p
+              style="font-size: 10px; letter-spacing: 1.3px"
+              class="fw-light text-monospace"
+            >
+              GET YOUR DREAM CAR AT A CLICK OF YOUR FINGERTIPS
+            </p>
+          </div>
+          <div class="col-5 bg-light py-5 px-3 bg-opacity-75">
+            <form>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  class="form-control input-field"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Username / Email"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control input-field"
+                  id="password"
+                  placeholder="Password"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-block btn-primary mt-3 rounded-0"
+              >
+                LOGIN
+              </button>
+              <div class="text-center small mt-1">
+                Don't have an account?
+                <a class="signup-link" href="">Sign up</a>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
-
-
-    <!-- <form>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> -->
-
 
     <!-- Bootstrap js file -->
     <script src="../js/bootstrap.min.js"></script>
-
-</body>
-
+  </body>
 </html>
