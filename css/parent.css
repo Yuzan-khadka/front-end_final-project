@@ -1,0 +1,8 @@
+:root {
+    --themeColor: #db2153;
+    --themeColorDarker:#991739;
+  }
+
+  body, ul, li, p, a, label, input, div {
+    font-family: 'Roboto', sans-serif;
+  }

@@ -1,0 +1,81 @@
+@import "../css/parent.css";
+
+/* Nav */
+#nav_top {
+    min-height: 40px;
+}
+
+#nav_top * {
+    font-size: 13px !important;
+}
+
+#main_nav a {
+    color: #212934;
+}
+
+#main_nav a:hover {
+    color: var(--themeColor);
+}
+
+#main_nav .navbar .nav-icon {
+    margin-right: 20px;
+}
+
+.navbar .logo {
+    color: var(--themeColor);
+    font-weight: 500 !important;
+}
+
+.h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px !important;
+    font-weight: 200 !important;
+}
+
+/* Banner Carousel */
+#banner-carousel {
+    background: #efefef !important;
+}
+
+#banner-carousel .carousel-indicators li {
+    margin-top: -50px;
+    background-color: var(--themeColor);
+}
+
+#banner-carousel .carousel-control-next i,
+#banner-carousel .carousel-control-prev i {
+    color: var(--themeColor) !important;
+    font-size: 2.8em !important;
+}
+
+/* media query for responsiveness */
+
+@media (min-width: 576px) {
+    .carousel .h1 {
+        font-size: 1em !important;
+    }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    #main_nav .navbar-nav {
+        max-width: 450px;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    #main_nav .navbar-nav {
+        max-width: 550px;
+    }
+
+    #banner-carousel .carousel-item {
+        min-height: 30rem !important;
+    }
+
+    /*.product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
+    .product-wap .product-color-dot {
+      width: 12px;
+      height: 12px;
+    } */
+}
