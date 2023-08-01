@@ -1,6 +1,4 @@
-:root {
-  --themeColor: #db2153;
-}
+ @import "../css/parent.css";
 
 body {
   background-image: linear-gradient(
@@ -29,6 +27,13 @@ body {
   border: none;
   width: 100%;
 }
+.btn:hover{
+  background-color: var(--themeColorDarker);
+}
 .signup-link {
   color: var(--themeColor);
 }
+.signup-link:hover{
+  color: var(--themeColorDarker);
+} 
+
