@@ -49,9 +49,10 @@
 }
 
 /* Footer */
-footer h2{
+footer h2 {
     color: var(--themeColor) !important;
 }
+
 footer a {
     color: #dcdde1;
 }
@@ -74,6 +75,7 @@ footer ul.footer-icons li:hover {
     background-color: var(--themeColor);
     transition: .5s;
 }
+
 /* 
 footer ul.footer-icons li:hover i {
     color: #212934;
