@@ -72,6 +72,14 @@
       </div>
     </section>
     <script>
+        // Check if "logged data" exists in local storage
+        const loggedData = JSON.parse(localStorage.getItem("logged data"));
+
+        // If loggedData exists, redirect to home.html
+        if (loggedData) {
+          window.location.href = "./home.html";
+        }
+
       // Check if the URL has a success query parameter and show the success message if present
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has("success")) {
@@ -93,6 +101,8 @@
     
         // Check if the user exists and the password matches
         if (existingData.email === emailValue && existingData.password === passwordValue) {
+          // saving the login data 
+          localStorage.setItem("logged data", JSON.stringify(existingData));
           // Redirect to home.html
           window.location.href = "./home.html";
         } else {

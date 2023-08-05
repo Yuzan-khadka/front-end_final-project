@@ -1,6 +1,4 @@
-const $ = function(id){
-    return document.getElementById(id)
-}
+
 // to prevent reload
 function validateForm(event){
     event.preventDefault()
