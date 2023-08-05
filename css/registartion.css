@@ -1,0 +1,36 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+/* CSS for larger screens */
+@media (min-width: 768px) {
+  /* Add your styles here for larger screens */
+}
+
+/* CSS for smaller screens (e.g., smartphones) */
+@media (max-width: 767px) {
+  /* Add your styles here for smaller screens */
+}
+.col-xl-6 {
+  /* Use percentage-based width instead of fixed pixel value */
+  width: 50%;
+}
+h3 {
+  font-size: 2rem; /* Responsive font size */
+}
+.form-control {
+  /* Increase font size and line height for better mobile usability */
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/* Hide the left image for small screens */
+@media (max-width: 767px) {
+  .col-xl-6 {
+    display: none;
+  }
+}
