@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Registration</title>
+</head>
+<link rel="stylesheet" href="../css/registration.css">
+
+<body>
+    <h1>User Registration</h1>
+    <form action="" method="post">
+        <div class="input-field">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" onfocusout="checkNull(event)" required>
+            <div class="error-msg"></div>
+        </div>
+        <div class="input-field">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" onfocusout="checkNull(event)" required>
+            <div class="error-msg"></div>
+        </div>
+        <div class="input-field">
+            <label for="email">Email:</label>
+            <input type="text" id="email" onfocusout="checkNull(event); checkEmail(event)" required>
+            <div class="error-msg"></div>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" onfocusout="checkNull(event);" required></textarea>
+            <div class="error-msg"></div>
+        </div>
+        <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" onfocusout="checkNull(event); checkPassword(event)" required>
+            <div class="error-msg"></div>
+        </div>
+        <div class="input-field">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" onfocusout="checkNull(event); checkConfirmPassword(event)" required>
+            <div class="error-msg"></div>
+        </div>
+        <div class="error-msg"></div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <script src="../js/validate.js"></script>
+</body>
+
+</html>
