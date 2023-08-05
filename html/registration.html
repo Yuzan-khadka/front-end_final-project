@@ -14,6 +14,9 @@
     <section
       class="min-vh-100 d-flex align-items-center justify-content-center"
     >
+    <form id="registration-form"  method="post">
+
+    
       <div class="container px-5">
         <div class="row justify-content-center align-items-center">
           <div class="col-12 text-md-center text-uppercase text-white px-0">
@@ -37,7 +40,9 @@
                 id="firstname"
                 aria-describedby="emailHelp"
                 placeholder="Firstname"
+                onfocusout="checkNull(event)" required
               />
+              <div class="error-msg"></div>
             </div>
             <div class="mb-4">
               <input
@@ -46,7 +51,9 @@
                 id="Lastname"
                 aria-describedby="emailHelp"
                 placeholder="Lastname"
+                onfocusout="checkNull(event)" required
               />
+              <div class="error-msg"></div>
             </div>
             <!-- email input -->
             <div class="mb-4">
@@ -56,7 +63,9 @@
                 id="email"
                 aria-describedby="emailHelp"
                 placeholder="Email"
+                onfocusout="checkNull(event); checkEmail(event)" required
               />
+              <div class="error-msg"></div>
             </div>
             <div class="mb-4">
               <input
@@ -65,7 +74,9 @@
                 id="Address"
                 aria-describedby="emailHelp"
                 placeholder="Address"
+                onfocusout="checkNull(event);" required
               />
+              <div class="error-msg"></div>
             </div>
             <!-- password input -->
             <div class="mb-3">
@@ -74,23 +85,27 @@
                 class="form-control input-field"
                 id="password"
                 placeholder="Password"
+                onfocusout="checkNull(event); checkPassword(event)" required
               />
+              <div class="error-msg"></div>
             </div>
             <!-- login button -->
             <div class="mb-3">
               <input
-                type="Confirm password"
+                type="password"
                 class="form-control input-field"
-                id="password"
+                id="confirmPassword"
                 placeholder="Confirm Password"
+                onfocusout="checkNull(event); checkConfirmPassword(event)" required
               />
+              <div class="error-msg"></div>
             </div>
-            <a
-              href="./home.html"
+            <button
               class="btn btn-block btn-primary mt-3 rounded-0"
+              type="submit"
             >
               REGISTER
-            </a>
+            </button>
             <!-- Sign up button -->
             <div class="text-center mt-1">
               Already have an account
@@ -99,9 +114,31 @@
           </div>
         </div>
       </div>
+    </form>
     </section>
 
     <!-- Bootstrap js file -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/validate.js"></script>
+    <script>
+      document.getElementById("registration-form").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const form = event.target;
+          const formData = {
+              firstName: form.firstname.value,
+              lastName: form.Lastname.value,
+              email: form.email.value,
+              address: form.Address.value,
+              password: form.password.value,
+          };
+          localStorage.setItem("Registered "+email.value, JSON.stringify(formData));
+          form.reset();
+
+          // Redirect to login.html
+          window.location.href = "./login.html?success=1";
+      });
+  </script>
+
   </body>
 </html>
