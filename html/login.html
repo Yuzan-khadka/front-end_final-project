@@ -53,12 +53,7 @@
               />
             </div>
             <!-- login button -->
-            <a
-              href="./home.html"
-              class="btn btn-block btn-primary mt-3 rounded-0"
-            >
-              LOGIN
-            </a>
+            <button class="btn btn-block btn-primary mt-3 rounded-0" onclick="login()">LOGIN</button>
             <!-- Sign up button -->
             <div class="text-center mt-1">
               Don't have an account?
@@ -67,6 +62,9 @@
             <div id="success-message" style="display: none; color: blue;  text-align: center;">
               <p>Registration successful! You can now log in.</p>
           </div>
+          <div id="error-message" style=" color: red;  text-align: center;">
+            
+        </div>
           </div>
         </div>
          <!-- Add a div to display the success message -->
@@ -77,14 +75,51 @@
       // Check if the URL has a success query parameter and show the success message if present
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has("success")) {
+        const successMessage = document.getElementById("success-message");
+        if (successMessage) {
+          successMessage.style.display = "block";
+        }
+      }
+    
+      function login() {
+        // Get the entered email value
+        const emailValue = document.getElementById("email").value;
+    
+        // Retrieve existing data from local storage
+        const existingData = JSON.parse(localStorage.getItem("Registered " + emailValue)) || {};
+    
+        // Get the entered password value
+        const passwordValue = document.getElementById("password").value;
+    
+        // Check if the user exists and the password matches
+        if (existingData.email === emailValue && existingData.password === passwordValue) {
+          // Redirect to home.html
+          window.location.href = "./home.html";
+        } else {
+          // Show the error message
+          const errorMessage = document.getElementById("error-message");
+          if (emailValue === ""){
+            errorMessage.textContent = "No email typed!";
+          }else if (emailValue !== existingData.email){
+            errorMessage.textContent = "User not found. Please register first!";
+          }else if (passwordValue === "") {
+            errorMessage.textContent = "No password typed!";
+          } else if (existingData.password !== passwordValue) {
+            errorMessage.textContent = "Password didn't match!";
+          } 
+    
+          // Hide the success message
           const successMessage = document.getElementById("success-message");
           if (successMessage) {
-              successMessage.style.display = "block";
+            successMessage.style.display = "none";
           }
+        }
       }
-  </script>
+    </script>
+        
     <!-- Bootstrap js file -->
     <script src="../js/bootstrap.min.js"></script>
  
+
   </body>
 </html>
