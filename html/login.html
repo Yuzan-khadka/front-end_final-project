@@ -11,6 +11,7 @@
   </head>
 
   <body>
+
     <section
       class="min-vh-100 d-flex align-items-center justify-content-center"
     >
@@ -63,12 +64,27 @@
               Don't have an account?
               <a class="signup-link" href="./registration.html">Sign up</a>
             </div>
+            <div id="success-message" style="display: none; color: blue;  text-align: center;">
+              <p>Registration successful! You can now log in.</p>
+          </div>
           </div>
         </div>
+         <!-- Add a div to display the success message -->
+        
       </div>
     </section>
-
+    <script>
+      // Check if the URL has a success query parameter and show the success message if present
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has("success")) {
+          const successMessage = document.getElementById("success-message");
+          if (successMessage) {
+              successMessage.style.display = "block";
+          }
+      }
+  </script>
     <!-- Bootstrap js file -->
     <script src="../js/bootstrap.min.js"></script>
+ 
   </body>
 </html>

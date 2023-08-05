@@ -26,10 +26,24 @@ function checkEmail(event){
 
     if(!isValidEmail(emailValue)){
         error.textContent = "Invalid email format."
+    }else if(checkIfEmailExist(emailValue)){
+        error.textContent = "Email already exist, Try another."
+        emailField.value = ""
     }else{
         error.textContent = ""
     }
 }
+
+function checkIfEmailExist(email){
+    const existingData = JSON.parse(localStorage.getItem("Registered " + email)) || []
+    if (existingData){
+        return true
+    }else{
+        return false
+    }
+}
+
+
 
 // function to check password
 function checkPassword(event) {

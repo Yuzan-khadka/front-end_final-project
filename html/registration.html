@@ -14,7 +14,7 @@
     <section
       class="min-vh-100 d-flex align-items-center justify-content-center"
     >
-    <form action="#" method="post">
+    <form id="registration-form"  method="post">
 
     
       <div class="container px-5">
@@ -94,9 +94,9 @@
               <input
                 type="password"
                 class="form-control input-field"
-                id="password"
+                id="confirmPassword"
                 placeholder="Confirm Password"
-                onfocusout="checkNull(event); checkPassword(event)" required
+                onfocusout="checkNull(event); checkConfirmPassword(event)" required
               />
               <div class="error-msg"></div>
             </div>
@@ -120,5 +120,24 @@
     <!-- Bootstrap js file -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/validate.js"></script>
+    <script>
+      document.getElementById("registration-form").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const form = event.target;
+          const formData = {
+              firstName: form.firstname.value,
+              lastName: form.Lastname.value,
+              email: form.email.value,
+              address: form.Address.value,
+              password: form.password.value,
+          };
+          localStorage.setItem("Registered "+email.value, JSON.stringify(formData));
+          form.reset();
+
+          // Redirect to login.html
+          window.location.href = "./login.html?success=1";
+      });
+  </script>
+
   </body>
 </html>
