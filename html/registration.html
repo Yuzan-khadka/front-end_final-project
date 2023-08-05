@@ -1,50 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
 
-<head>
-    <title>User Registration</title>
-</head>
-<link rel="stylesheet" href="../css/registration.css">
+  <body>
+    <section
+      class="min-vh-100 d-flex align-items-center justify-content-center"
+    >
+    <form action="#" method="post">
 
-<body>
-    <h1>User Registration</h1>
-    <form action="" method="post">
-        <div class="input-field">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" onfocusout="checkNull(event)" required>
-            <div class="error-msg"></div>
+    
+      <div class="container px-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 text-md-center text-uppercase text-white px-0">
+            <h1 class="fw-bold fs-sm-3 fs-md-1 mb-0">
+              Welcome to car e-commerce
+            </h1>
+            <p
+              style="font-size: 13px; letter-spacing: 1.3px"
+              class="fw-light text-monospace"
+            >
+              GET YOUR DREAM CAR AT A CLICK OF YOUR FINGERTIPS
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-10 col-lg-6 justify-content-center align-items-center bg-light py-5 px-3 bg-opacity-75"
+          >
+            <div class="mb-4">
+              <input
+                type="Firstname"
+                class="form-control input-field"
+                id="firstname"
+                aria-describedby="emailHelp"
+                placeholder="Firstname"
+                onfocusout="checkNull(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <div class="mb-4">
+              <input
+                type="Lastname"
+                class="form-control input-field"
+                id="Lastname"
+                aria-describedby="emailHelp"
+                placeholder="Lastname"
+                onfocusout="checkNull(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- email input -->
+            <div class="mb-4">
+              <input
+                type="email"
+                class="form-control input-field"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+                onfocusout="checkNull(event); checkEmail(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <div class="mb-4">
+              <input
+                type="Address"
+                class="form-control input-field"
+                id="Address"
+                aria-describedby="emailHelp"
+                placeholder="Address"
+                onfocusout="checkNull(event);" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- password input -->
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control input-field"
+                id="password"
+                placeholder="Password"
+                onfocusout="checkNull(event); checkPassword(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- login button -->
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control input-field"
+                id="password"
+                placeholder="Confirm Password"
+                onfocusout="checkNull(event); checkPassword(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <button
+              class="btn btn-block btn-primary mt-3 rounded-0"
+              type="submit"
+            >
+              REGISTER
+            </button>
+            <!-- Sign up button -->
+            <div class="text-center mt-1">
+              Already have an account
+              <a class="signup-link" href="./login.html">Sign in</a>
+            </div>
+          </div>
         </div>
-        <div class="input-field">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" onfocusout="checkNull(event)" required>
-            <div class="error-msg"></div>
-        </div>
-        <div class="input-field">
-            <label for="email">Email:</label>
-            <input type="text" id="email" onfocusout="checkNull(event); checkEmail(event)" required>
-            <div class="error-msg"></div>
-        </div>
-        <div>
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" onfocusout="checkNull(event);" required></textarea>
-            <div class="error-msg"></div>
-        </div>
-        <div class="input-field">
-            <label for="password">Password:</label>
-            <input type="password" id="password" onfocusout="checkNull(event); checkPassword(event)" required>
-            <div class="error-msg"></div>
-        </div>
-        <div class="input-field">
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" onfocusout="checkNull(event); checkConfirmPassword(event)" required>
-            <div class="error-msg"></div>
-        </div>
-        <div class="error-msg"></div>
-        <div>
-            <button type="submit">Register</button>
-        </div>
+      </div>
     </form>
-    <script src="../js/validate.js"></script>
-</body>
+    </section>
 
+    <!-- Bootstrap js file -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/validate.js"></script>
+  </body>
 </html>

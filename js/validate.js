@@ -10,7 +10,7 @@ function validateForm(event){
 function checkNull(event){
     const field  = event.target
     const error = field.nextElementSibling
-    const label = field.previousElementSibling.textContent.trim()
+    const label = field.getAttribute("placeholder");
     if (field.value === ""){
         error.textContent = `${label} is required`
     }else{
