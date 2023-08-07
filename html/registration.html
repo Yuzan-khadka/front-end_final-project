@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+
+  <body>
+    <section
+      class="min-vh-100 d-flex align-items-center justify-content-center"
+    >
+    <form id="registration-form"  method="post">
+
+    
+      <div class="container px-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 text-md-center text-uppercase text-white px-0">
+            <h1 class="fw-bold fs-sm-3 fs-md-1 mb-0">
+              Welcome to car e-commerce
+            </h1>
+            <p
+              style="font-size: 13px; letter-spacing: 1.3px"
+              class="fw-light text-monospace"
+            >
+              GET YOUR DREAM CAR AT A CLICK OF YOUR FINGERTIPS
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-10 col-lg-6 justify-content-center align-items-center bg-light py-5 px-3 bg-opacity-75"
+          >
+            <div class="mb-4">
+              <input
+                type="Firstname"
+                class="form-control input-field"
+                id="firstname"
+                aria-describedby="emailHelp"
+                placeholder="Firstname"
+                onfocusout="checkNull(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <div class="mb-4">
+              <input
+                type="Lastname"
+                class="form-control input-field"
+                id="Lastname"
+                aria-describedby="emailHelp"
+                placeholder="Lastname"
+                onfocusout="checkNull(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- email input -->
+            <div class="mb-4">
+              <input
+                type="email"
+                class="form-control input-field"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+                onfocusout="checkNull(event); checkEmail(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <div class="mb-4">
+              <input
+                type="Address"
+                class="form-control input-field"
+                id="Address"
+                aria-describedby="emailHelp"
+                placeholder="Address"
+                onfocusout="checkNull(event);" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- password input -->
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control input-field"
+                id="password"
+                placeholder="Password"
+                onfocusout="checkNull(event); checkPassword(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <!-- login button -->
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control input-field"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                onfocusout="checkNull(event); checkConfirmPassword(event)" required
+              />
+              <div class="error-msg"></div>
+            </div>
+            <button
+              class="btn btn-block btn-primary mt-3 rounded-0"
+              type="submit"
+            >
+              REGISTER
+            </button>
+            <!-- Sign up button -->
+            <div class="text-center mt-1">
+              Already have an account
+              <a class="signup-link" href="./login.html">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    </section>
+
+    <!-- Bootstrap js file -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/validate.js"></script>
+    <script>
+      document.getElementById("registration-form").addEventListener("submit", function (event) {
+          event.preventDefault();
+          const form = event.target;
+          const formData = {
+              firstName: form.firstname.value,
+              lastName: form.Lastname.value,
+              email: form.email.value,
+              address: form.Address.value,
+              password: form.password.value,
+          };
+          localStorage.setItem("Registered "+email.value, JSON.stringify(formData));
+          form.reset();
+
+          // Redirect to login.html
+          window.location.href = "./login.html?success=1";
+      });
+  </script>
+
+  </body>
+</html>

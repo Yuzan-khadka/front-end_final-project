@@ -1,56 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <!-- Bootstrap css file -->
-  <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  <!-- css -->
-  <link rel="stylesheet" href="../css/login.css" />
-</head>
+  <body>
 
-<body>
-  <section class="min-vh-100 d-flex align-items-center justify-content-center">
-    <div class="container px-5">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 text-md-center text-uppercase text-white px-0">
-          <h1 class="fw-bold fs-sm-3 fs-md-1 mb-0">
-            Welcome to
-            car e-commerce
-          </h1>
-          <p style="font-size: 13px; letter-spacing: 1.3px" class="fw-light text-monospace">
-            GET YOUR DREAM CAR AT A CLICK OF YOUR FINGERTIPS
-          </p>
+    <section
+      class="min-vh-100 d-flex align-items-center justify-content-center"
+    >
+      <div class="container px-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 text-md-center text-uppercase text-white px-0">
+            <h1 class="fw-bold fs-sm-3 fs-md-1 mb-0">
+              Welcome to car e-commerce
+            </h1>
+            <p
+              style="font-size: 13px; letter-spacing: 1.3px"
+              class="fw-light text-monospace"
+            >
+              GET YOUR DREAM CAR AT A CLICK OF YOUR FINGERTIPS
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-10 col-lg-6 justify-content-center align-items-center bg-light py-5 px-3 bg-opacity-75"
+          >
+            <!-- email input -->
+            <div class="mb-4">
+              <input
+                type="email"
+                class="form-control input-field"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Username / Email"
+                required
+              />
+            </div>
+            <!-- password input -->
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control input-field"
+                id="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <!-- login button -->
+            <button class="btn btn-block btn-primary mt-3 rounded-0" onclick="login()">LOGIN</button>
+            <!-- Sign up button -->
+            <div class="text-center mt-1">
+              Don't have an account?
+              <a class="signup-link" href="./registration.html">Sign up</a>
+            </div>
+            <div id="success-message" style="display: none; color: blue;  text-align: center;">
+              <p>Registration successful! You can now log in.</p>
+          </div>
+          <div id="error-message" style=" color: red;  text-align: center;">
+            
         </div>
-        <div
-          class="col-sm-12 col-md-10 col-lg-6 justify-content-center align-items-center bg-light py-5 px-3 bg-opacity-75">
-          <!-- email input -->
-          <div class="mb-4">
-            <input type="email" class="form-control input-field" id="email" aria-describedby="emailHelp"
-              placeholder="Username / Email" />
-          </div>
-          <!-- password input -->
-          <div class="mb-3">
-            <input type="password" class="form-control input-field" id="password" placeholder="Password" />
-          </div>
-          <!-- login button -->
-          <a href="./home.html" class="btn btn-block btn-primary mt-3 rounded-0">
-            LOGIN
-          </a>
-          <!-- Sign up button -->
-          <div class="text-center mt-1">
-            Don't have an account?
-            <a class="signup-link" href="">Sign up</a>
           </div>
         </div>
+         <!-- Add a div to display the success message -->
+        
       </div>
-    </div>
-  </section>
+    </section>
+    <script>
+        // Check if "logged data" exists in local storage
+        const loggedData = JSON.parse(localStorage.getItem("logged data"));
 
-  <!-- Bootstrap js file -->
-  <script src="../js/bootstrap.min.js"></script>
-</body>
+        // If loggedData exists, redirect to home.html
+        if (loggedData) {
+          window.location.href = "./home.html";
+        }
 
+      // Check if the URL has a success query parameter and show the success message if present
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has("success")) {
+        const successMessage = document.getElementById("success-message");
+        if (successMessage) {
+          successMessage.style.display = "block";
+        }
+      }
+    
+      function login() {
+        // Get the entered email value
+        const emailValue = document.getElementById("email").value;
+    
+        // Retrieve existing data from local storage
+        const existingData = JSON.parse(localStorage.getItem("Registered " + emailValue)) || {};
+    
+        // Get the entered password value
+        const passwordValue = document.getElementById("password").value;
+    
+        // Check if the user exists and the password matches
+        if (existingData.email === emailValue && existingData.password === passwordValue) {
+          // saving the login data 
+          localStorage.setItem("logged data", JSON.stringify(existingData));
+          // Redirect to home.html
+          window.location.href = "./home.html";
+        } else {
+          // Show the error message
+          const errorMessage = document.getElementById("error-message");
+          if (emailValue === ""){
+            errorMessage.textContent = "No email typed!";
+          }else if (emailValue !== existingData.email){
+            errorMessage.textContent = "User not found. Please register first!";
+          }else if (passwordValue === "") {
+            errorMessage.textContent = "No password typed!";
+          } else if (existingData.password !== passwordValue) {
+            errorMessage.textContent = "Password didn't match!";
+          } 
+    
+          // Hide the success message
+          const successMessage = document.getElementById("success-message");
+          if (successMessage) {
+            successMessage.style.display = "none";
+          }
+        }
+      }
+    </script>
+        
+    <!-- Bootstrap js file -->
+    <script src="../js/bootstrap.min.js"></script>
+ 
+
+  </body>
 </html>
