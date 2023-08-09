@@ -1,0 +1,21 @@
+@import "../css/parent.css";
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: var(--themeColor);
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, var(--themeColor), rgba(253, 160, 133, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, var(--themeColor), rgba(253, 160, 133, 1))
+    }
+
+.social-icons{
+    color: var(--themeColor);
+    transition: 0.3s ease;
+}
+
+.social-icons:hover{
+    transform: scale(1.2);
+}
