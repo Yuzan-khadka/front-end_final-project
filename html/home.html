@@ -106,34 +106,39 @@
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex gap-3">
-                    <a type="button" class="btn btn-success text-white" href="../html/login.html">Login</a>
-                    <a type="button" class="btn register-btn text-white" href="../html/registration.html">Register</a>
-                    <div class="dropdown d-none">
-                        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <div id="user-unlogged-nav">
+                        <a type="button" class="btn btn-success text-white" href="../html/login.html">Login</a>
+                        <a type="button" class="btn register-btn text-white" href="../html/registration.html">Register</a>
+                    </div> 
+                    <div class="d-none d-flex" id="user-logged-nav">
+                        <div class="dropdown">
+                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button> -->
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown button
-                        </button> -->
+                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
                         <a class="nav-icon position-relative text-decoration-none dropdown-toggle" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                    </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" onclick="logoutAction()" href="#">Logout</a></li>
+                            <!-- <li><a class="dropdown-item" href="#"></a></li> -->
                         </ul>
                     </div>
-                    <div class="dropdown d-none">
-                    <a class="nav-icon position-relative text-decoration-none dropdown-toggle" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                        <!-- <li><a class="dropdown-item" href="#"></a></li> -->
-                    </ul>
-                </div>
+                    </div>                    
+            
                 </div>
             </div>
 
