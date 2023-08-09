@@ -27,7 +27,7 @@
 }
 
 .h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 38px !important;
     font-weight: 200 !important;
 }
@@ -62,6 +62,24 @@
 .go-rent-btn:hover{
     background-color: var(--themeColor);
     transform: scale(1.1);
+}
+
+/* featured product card */
+.featured-product .card .card-img-top{
+    transition: 0.3s ease;
+    scale: 0.9;
+}
+
+.featured-product .card .card-img-top:hover{
+    scale: 1.1;
+}
+
+.featured-product .card .h2{
+    font-size: 1.8em !important;
+}
+
+.featured-product .card .h2:hover{
+    color: var(--themeColor) !important;
 }
 
 /* Footer */

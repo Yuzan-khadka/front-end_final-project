@@ -1,0 +1,91 @@
+@import "../css/parent.css";
+
+
+/* add to cart button color */
+.btn-lg{
+    background-color: var(--themeColor);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-lg:hover{
+    background-color: var(--themeColorDarker);
+    color: #ffffff;
+    outline: none;
+}
+
+.product-wap {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+}
+
+.product-wap .product-color-dot.color-dot-red {
+    background: #f71515;
+}
+
+.product-wap .product-color-dot.color-dot-blue {
+    background: #6db4fe;
+}
+
+.product-wap .product-color-dot.color-dot-black {
+    background: #000000;
+}
+
+.product-wap .product-color-dot.color-dot-light {
+    background: #e0e0e0;
+}
+
+.product-wap .product-color-dot.color-dot-green {
+    background: #0bff7e;
+}
+
+.card.product-wap .card .product-overlay {
+    background: rgba(0, 0, 0, .2);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+.card.product-wap:hover .card .product-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card.product-wap a {
+    color: #000;
+}
+
+#carousel-related-product .slick-slide:focus {
+    outline: none !important;
+}
+
+#carousel-related-product .slick-dots li button:before {
+    font-size: 45px!important;
+    margin-top: 20px;
+}
+
+.product-wap .h3,
+.product-wap li,
+.product-wap i,
+.product-wap p {
+    font-size: 12px !important;
+}
+
+.product-wap .product-color-dot {
+    width: 6px;
+    height: 6px;
+}
+
+@media (min-width: 992px) {
+
+    .product-wap .h3,
+    .product-wap li,
+    .product-wap i,
+    .product-wap p {
+        font-size: 18px !important;
+    }
+
+    .product-wap .product-color-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
