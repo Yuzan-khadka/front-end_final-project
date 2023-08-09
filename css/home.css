@@ -26,6 +26,12 @@
     font-weight: 500 !important;
 }
 
+/* dropdown */
+.dropdown-menu{
+    min-width: auto!important;
+    transform: translate(-30px, 10px);
+}
+
 .h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 38px !important;
