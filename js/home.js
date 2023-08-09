@@ -5,8 +5,8 @@ user_nav();
 
 function user_nav(){
     if(loggedData){
-        const user_logged_nav = $('user-logged-nav')
-        const user_unLogged_nav = $('user-unlogged-nav')
+        const user_logged_nav = document.getElementById('user-logged-nav')
+        const user_unLogged_nav = document.getElementById('user-unlogged-nav')
         user_logged_nav.classList.remove('d-none')
         user_unLogged_nav.classList.add('d-none')
     
