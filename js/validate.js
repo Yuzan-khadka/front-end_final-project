@@ -61,7 +61,7 @@ function checkConfirmPassword(event){
     const confirmPasswordField = event.target;
     const confirmPasswordValue = confirmPasswordField.value;
     const error = confirmPasswordField.nextElementSibling;
-    const password = $('password')
+    const password = document.getElementById('password')
 
     if (password.value === ""){
         const error = password.nextElementSibling
