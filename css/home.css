@@ -26,6 +26,13 @@
     font-weight: 500 !important;
 }
 
+.register-btn{
+    background-color: var(--themeColor);
+
+}
+.register-btn:hover{
+    background-color: var(--themeColorDarker);
+}
 /* dropdown */
 .dropdown-menu{
     min-width: auto!important;
