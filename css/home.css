@@ -26,6 +26,10 @@
     font-weight: 500 !important;
 }
 
+.navbar .nav-btns{
+    justify-content: flex-start!important;
+}
+
 .register-btn{
     background-color: var(--themeColor);
 
