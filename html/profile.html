@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- Bootstrap css file -->
-     <link rel="stylesheet" href="../css/bootstrap.min.css" />
-     <!-- css -->
-     <link rel="stylesheet" href="../css/home.css" />
-     <link rel="stylesheet" href="../css/profile.css">
-     <link rel="stylesheet" href="../css/slick-slider.css">
- 
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/slick-slider.css">
+    <link rel="stylesheet" href="../css/shopping-cart.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
 </head>
+
 <body>
 
     <!-- Header -->
@@ -57,8 +61,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="align-self-center collapse navbar-collapse d-lg-flex justify-content-lg-between"
-                id="main_nav">
+            <div class="align-self-center collapse navbar-collapse d-lg-flex justify-content-lg-between" id="main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
@@ -75,42 +78,168 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="navbar align-self-center d-flex gap-3 nav-btns">
+
+                <div class="navbar align-self-center d-flex gap-3">
                     <div id="user-unlogged-nav">
                         <a type="button" class="btn btn-success text-white" href="../html/login.html">Login</a>
-                        <a type="button" class="btn register-btn text-white" href="../html/registration.html">Register</a>
+                        <a type="button" class="btn register-btn text-white"
+                            href="../html/registration.html">Register</a>
                     </div>
                     <div class="d-none d-flex" id="user-logged-nav">
-                        <div class="dropdown ">
-                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown button
-                            </button> -->
-                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <span
+                                    class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                            </a>
+                            <!-- uncomment and display this block if cart has no item -->
+                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                   <li><a class="dropdown-item" href="#">You have zero cars in cart!</a></li>
+                               </ul> -->
+                            <!-- cart drop down -->
+                            <div class="dropdown-menu cart" aria-labelledby="dropdownMenuButton1">
+                                <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col">
+                                        <div class="card shopping-cart" style="border-radius: 15px;">
+                                            <div class="card-body text-black">
+
+                                                <div class="row">
+                                                    <div class="col px-2 py-2 px-md-5 py-md-4">
+
+                                                        <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Items
+                                                            you rented</h3>
+
+                                                        <div class="d-flex align-items-center mb-5">
+                                                            <div class="">
+                                                                <img src="../images/product1-red.jpg" class="img-fluid"
+                                                                    style="width: 150px;" alt="Product">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <a href="#!" class="float-end text-black"><i
+                                                                        class="fas fa-times"></i></a>
+                                                                <h5 class="text-primary title">2023 Jeep Wrangler</h5>
+                                                                <h6 style="color: #9e9e9e;">Color: Red</h6>
+                                                                <div class="d-flex align-items-center">
+                                                                    <p class="fw-bold mb-0 me-5 pe-3">799$</p>
+                                                                    <div
+                                                                        class="def-number-input number-input safari_only">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                            class="minus"></button>
+                                                                        <input class="quantity fw-bold text-black"
+                                                                            min="0" name="quantity" value="1"
+                                                                            type="number">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                            class="plus"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex align-items-center mb-5">
+                                                            <div class="">
+                                                                <img src="../images/mazda-cx7.jpg" class="img-fluid"
+                                                                    style="width: 150px;" alt="Product">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <a href="#!" class="float-end text-black"><i
+                                                                        class="fas fa-times"></i></a>
+                                                                <h5 class="text-primary title">Mazda-CX7</h5>
+                                                                <h6 style="color: #9e9e9e;">Color: White</h6>
+                                                                <div class="d-flex align-items-center">
+                                                                    <p class="fw-bold mb-0 me-5 pe-3">439$</p>
+                                                                    <div
+                                                                        class="def-number-input number-input safari_only">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                            class="minus"></button>
+                                                                        <input class="quantity fw-bold text-black"
+                                                                            min="0" name="quantity" value="1"
+                                                                            type="number">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                            class="plus"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex align-items-center mb-5">
+                                                            <div class="">
+                                                                <img src="../images/toyota-rav4.jpg" class="img-fluid"
+                                                                    style="width: 150px;" alt="Product">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <a href="#!" class="float-end text-black"><i
+                                                                        class="fas fa-times"></i></a>
+                                                                <h5 class="text-primary title">Toyota-RAV4</h5>
+                                                                <h6 style="color: #9e9e9e;">Color: Grey</h6>
+                                                                <div class="d-flex align-items-center">
+                                                                    <p class="fw-bold mb-0 me-5 pe-3">659$</p>
+                                                                    <div
+                                                                        class="def-number-input number-input safari_only">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                            class="minus"></button>
+                                                                        <input class="quantity fw-bold text-black"
+                                                                            min="0" name="quantity" value="2"
+                                                                            type="number">
+                                                                        <button
+                                                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                            class="plus"></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="mb-4"
+                                                            style="height: 2px; background-color: #1266f1; opacity: 1;">
+
+                                                        <div class="d-flex justify-content-between px-x">
+                                                            <p class="fw-bold">Discount:</p>
+                                                            <p class="fw-bold">95$</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between p-2 mb-2"
+                                                            style="background-color: #e1f5fe;">
+                                                            <h5 class="fw-bold mb-0">Total:</h5>
+                                                            <h5 class="fw-bold mb-0">2261$</h5>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-block checkout-btn">
+                                                        Go to checkout
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- cart dropdown close -->
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="../html/profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" onclick="logoutAction()" href="#">Logout</a></li>
+                                <!-- <li><a class="dropdown-item" href="#"></a></li> -->
                             </ul>
                         </div>
-                        <div class="dropdown ">
-                        <a class="nav-icon position-relative text-decoration-none dropdown-toggle" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item" href="../html/profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                            <!-- <li><a class="dropdown-item" href="#"></a></li> -->
-                        </ul>
                     </div>
-                    </div>
-                  
-             
+
                 </div>
             </div>
 
@@ -120,37 +249,37 @@
     <!-- End Header -->
 
     <section class="vh-100" style="background-color: #f4f5f7;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-6 mb-4 mb-lg-0">
-        <div class="card mb-3" style="border-radius: .5rem;">
-          <div class="row g-0">
-            <div class="col-md-4 gradient-custom text-center text-white"
-              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-              <h5>Marie Horwitz</h5>
-              <i class="far fa-edit mb-5"></i>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body p-4">
-                <h6>Information</h6>
-                <hr class="mt-0 mb-4">
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Email</h6>
-                    <p class="text-muted">info@example.com</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Phone</h6>
-                    <p class="text-muted">123 456 789</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Address</h6>
-                    <p class="text-muted">279 YorkLand Blvd</p>
-                  </div>
-                </div>
-                <!-- <h6>Projects</h6>
+        <div class="container py-md-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-6 my-4 my-lg-0">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white"
+                                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                    alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                                <h5>Marie Horwitz</h5>
+                                <i class="far fa-edit mb-5"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h6>Information</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>Email</h6>
+                                            <p class="text-muted">info@example.com</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Phone</h6>
+                                            <p class="text-muted">123 456 789</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Address</h6>
+                                            <p class="text-muted">279 YorkLand Blvd</p>
+                                        </div>
+                                    </div>
+                                    <!-- <h6>Projects</h6>
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
@@ -162,21 +291,21 @@
                     <p class="text-muted">Dolor sit amet</p>
                   </div>
                 </div> -->
-                <h6>Social Handles</h6>
-                <hr class="mt-0 mb-4">
-                <div class="d-flex justify-content-start">
-                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3 social-icons"></i></a>
-                  <a href="#!"><i class="fab fa-twitter fa-lg me-3 social-icons"></i></a>
-                  <a href="#!"><i class="fab fa-instagram fa-lg social-icons"></i></a>
+                                    <h6>Social Handles</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="d-flex justify-content-start">
+                                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3 social-icons"></i></a>
+                                        <a href="#!"><i class="fab fa-twitter fa-lg me-3 social-icons"></i></a>
+                                        <a href="#!"><i class="fab fa-instagram fa-lg social-icons"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Start Footer -->
@@ -288,6 +417,7 @@
     <script src="../js/dropdown-toggle.js"></script>
     <script src="../js/base.js"></script>
     <script src="../js/home.js"></script>
-    
+
 </body>
+
 </html>
