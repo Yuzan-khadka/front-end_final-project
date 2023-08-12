@@ -1,45 +1,64 @@
 [
     {
+      "id": 1,
       "imageSrc": "../images/banner-img-1.png",
       "rating": 3,
       "price": "$240.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.",
+      "quantity": 2,
+      "model": "Wrangler Jeep"
     },
     {
-      "imageSrc": "../images/banner-img-1.png",
+      "id":2,
+      "imageSrc": "../images/subaru-forester.jpg",
       "rating": 3,
       "price": "$480.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper."
+      "description": "Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.",
+      "quantity": 3,
+      "model": "subaru Jeep"
     },
     {
-      "imageSrc": "../images/banner-img-1.png",
+      "id": 3,
+      "imageSrc": "../images/mazda-cx7.jpg",
       "rating": 5,
       "price": "$360.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec."
+      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
+      "quantity": 1,
+      "model": "honda Jeep"
     },
     {
-      "imageSrc": "../images/banner-img-1.png",
+      "id": 4,
+      "imageSrc": "../images/subaru-forester.jpg",
       "rating": 5,
       "price": "$360.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec."
+      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
+      "quantity": 2,
+      "model": "subaru Jeep"
     },
     {
-      "imageSrc": "../images/banner-img-1.png",
+      "id": 5,
+      "imageSrc": "../images/product1-red.jpg",
       "rating": 2,
-      "price": "$360.00",
+      "price": "$410.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec."
+      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
+      "quantity": 4,
+      "model": "Wrangler Jeep"
+  
     },
     {
-      "imageSrc": "../images/banner-img-1.png",
+      "id": 6,
+      "imageSrc": "../images/honda-crv.jpg",
       "rating": 3,
-      "price": "$360.00",
+      "price": "$260.00",
       "title": "2023 JK WRANGLER RUBICON",
-      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec."
+      "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
+      "quantity": 0,
+      "model": "honda Jeep"
     }
   ]
   

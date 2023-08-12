@@ -302,7 +302,7 @@
                 <div class="col-lg-5 mt-5">
                     <div class="img-container card mb-3 p-2">
                         <img class="card-img img-fluid" src="../images/product1-black.jpg" alt="Card image cap"
-                            id="product-detail">
+                            id="main-car-img"> <!--there was id product-detail here in this img -->
                     </div>
                     <div class="row">
                         <!--Start Carousel Wrapper-->
@@ -351,10 +351,10 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2">Maisto Special Edition Trucks 2023 Jeep Wrangler Unlimited Diecast Vehicle
+                            <h1 class="h2" id="car-title">Maisto Special Edition Trucks 2023 Jeep Wrangler Unlimited Diecast Vehicle
                                 (1:24 Scale), Color may vary</h1>
-                            <p class="h3 py-2">CAD 25.00</p>
-                            <p class="py-2">
+                            <p class="h3 py-2" id="car-rent-price">CAD 25.00</p>
+                            <p class="py-2" id="car-rating">
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
@@ -367,12 +367,12 @@
                                     <h6>Brand:</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>Wrangler Jeep</strong></p>
+                                    <p class="text-muted"><strong id="car-model">Wrangler Jeep</strong></p>
                                 </li>
                             </ul>
 
                             <h6>Description:</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt
+                            <p id="car-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt
                                 ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum
                                 convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
                             <ul class="list-inline">
@@ -405,12 +405,12 @@
                                                 <input type="hidden" name="product-quanity" id="product-quanity"
                                                     value="1">
                                             </li>
-                                            <li class="list-inline-item"><span class="btn btn-success"
-                                                    id="btn-minus">-</span></li>
+                                            <!-- <li class="list-inline-item"><span class="btn btn-success"
+                                                    id="btn-minus">-</span></li> -->
                                             <li class="list-inline-item"><span class="badge bg-secondary"
-                                                    id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success"
-                                                    id="btn-plus">+</span></li>
+                                                    id="car-quantity">1</span></li>
+                                            <!-- <li class="list-inline-item"><span class="btn btn-success"
+                                                    id="btn-plus">+</span></li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -420,7 +420,7 @@
                                             value="buy">Buy</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-lg" name="submit"
+                                        <button id="card-submit" type="submit" class="btn btn-lg" name="submit"
                                             value="addtocard">Add To Cart</button>
                                     </div>
                                 </div>
@@ -941,8 +941,9 @@
 
     </footer>
     <!-- End Footer -->
-    <script src="../js/base.js"></script>
-    <!-- Load fontawesome icons -->
+  
+  
+    Load fontawesome icons
     <script src="https://kit.fontawesome.com/d8c50744cf.js" crossorigin="anonymous"></script>
     <!-- Bootstrap js file -->
     <script src="../js/popper.min.js"></script>
@@ -951,8 +952,7 @@
     <script src="../js/jquery-3.7.0.min.js"></script>
     <!-- slick for carousel -->
     <script src="../js/slick-min.js"></script>
-    <!-- product color switch-->
-    <script src="../js/product-color-switch.js"></script>
+    
 
    <!-- Start Slider Script -->
    <script src="assets/js/slick.min.js"></script>
@@ -994,7 +994,12 @@
      <!-- dropdown toggle -->
      <script src="../js/dropdown-toggle.js"></script>
    <!-- End Slider Script -->
-   <script src="../js/home.js"></script>
+   <!-- <script src="../js/home.js"></script> -->
+      <!-- product color switch-->
+      <script src="../js/product-color-switch.js"></script>
+      <script src="../js/home.js"></script>
+      <script src="../js/productDetail.js"> </script>
+  
 </body>
 
 </html>
