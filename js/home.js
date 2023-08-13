@@ -3,7 +3,6 @@
 
 user_nav();
 
-console.log('asfsdf')
 
 function user_nav(){
     if(loggedData){
@@ -28,6 +27,8 @@ function loadCars() {
     fetch("../data/cars.json")
       .then((response) => response.json())
       .then((data) => {
+        const existingItems = localStorage.getItem('carsList') ? JSON.parse(localStorage.getItem('carsList')) : {};
+
         data.forEach((product) => {
           const productCard = document.createElement("div");
           productCard.className = "col-12 col-md-4 mb-4";
@@ -46,8 +47,15 @@ function loadCars() {
               </div>
             </div>
           `;
+
           productContainer.appendChild(productCard);
+          if (!existingItems[product.id]) {
+            existingItems[product.id] = product.quantity;
+        }
         });
+        
+
+      localStorage.setItem('carsList', JSON.stringify(existingItems));
       })
       .catch((error) => {
         console.error("Error loading products:", error);

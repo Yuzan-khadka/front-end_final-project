@@ -140,7 +140,7 @@
                 >
                   <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                   <span
-                  class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                  class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"  id="cartNumItem">0</span>
                 </a>
                 <!-- uncomment and display this block if cart has no item -->
                 <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -155,104 +155,22 @@
                                     <div class="row">
                                         <div class="col px-2 py-2 px-md-5 py-md-4">
 
-                                            <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Items
+                                            <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase" >Items
                                                 you rented</h3>
-
-                                            <div class="d-flex align-items-center mb-5">
-                                                <div class="">
-                                                    <img src="../images/product1-red.jpg" class="img-fluid"
-                                                        style="width: 150px;" alt="Product">
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <a href="#!" class="float-end text-black"><i
-                                                            class="fas fa-times"></i></a>
-                                                    <h5 class="text-primary title">2023 Jeep Wrangler</h5>
-                                                    <h6 style="color: #9e9e9e;">Color: Red</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="fw-bold mb-0 me-5 pe-3">799$</p>
-                                                        <div
-                                                            class="def-number-input number-input safari_only">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                                class="minus"></button>
-                                                            <input class="quantity fw-bold text-black"
-                                                                min="0" name="quantity" value="1"
-                                                                type="number">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                                class="plus"></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="d-flex align-items-center mb-5">
-                                                <div class="">
-                                                    <img src="../images/mazda-cx7.jpg" class="img-fluid"
-                                                        style="width: 150px;" alt="Product">
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <a href="#!" class="float-end text-black"><i
-                                                            class="fas fa-times"></i></a>
-                                                    <h5 class="text-primary title">Mazda-CX7</h5>
-                                                    <h6 style="color: #9e9e9e;">Color: White</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="fw-bold mb-0 me-5 pe-3">439$</p>
-                                                        <div
-                                                            class="def-number-input number-input safari_only">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                                class="minus"></button>
-                                                            <input class="quantity fw-bold text-black"
-                                                                min="0" name="quantity" value="1"
-                                                                type="number">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                                class="plus"></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="d-flex align-items-center mb-5">
-                                                <div class="">
-                                                    <img src="../images/toyota-rav4.jpg" class="img-fluid"
-                                                        style="width: 150px;" alt="Product">
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <a href="#!" class="float-end text-black"><i
-                                                            class="fas fa-times"></i></a>
-                                                    <h5 class="text-primary title">Toyota-RAV4</h5>
-                                                    <h6 style="color: #9e9e9e;">Color: Grey</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="fw-bold mb-0 me-5 pe-3">659$</p>
-                                                        <div
-                                                            class="def-number-input number-input safari_only">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                                class="minus"></button>
-                                                            <input class="quantity fw-bold text-black"
-                                                                min="0" name="quantity" value="2"
-                                                                type="number">
-                                                            <button
-                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                                class="plus"></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                                <!-- Load cart items here -->
+                                                <div id="cartItems"></div>
+                                            
                                             <hr class="mb-4"
                                                 style="height: 2px; background-color: #1266f1; opacity: 1;">
 
                                             <div class="d-flex justify-content-between px-x">
-                                                <p class="fw-bold">Discount:</p>
-                                                <p class="fw-bold">95$</p>
+                                                <p class="fw-bold">Tax:</p>
+                                                <p class="fw-bold" id="taxRentAmount">0$</p>
                                             </div>
                                             <div class="d-flex justify-content-between p-2 mb-2"
                                                 style="background-color: #e1f5fe;">
                                                 <h5 class="fw-bold mb-0">Total:</h5>
-                                                <h5 class="fw-bold mb-0">2261$</h5>
+                                                <h5 class="fw-bold mb-0" id="totalRentAmount">0$</h5>
                                             </div>
 
                                         </div>
@@ -380,7 +298,7 @@
                                     <h6>Availability :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>In Stock</strong></p>
+                                    <p class="text-muted">In Stock:  <strong id="car-quantity"></strong></p>
                                 </li>
                             </ul>
                             <!-- <h6>Specification:</h6>
@@ -405,13 +323,14 @@
                                                 <input type="hidden" name="product-quanity" id="product-quanity"
                                                     value="1">
                                             </li>
-                                            <!-- <li class="list-inline-item"><span class="btn btn-success"
-                                                    id="btn-minus">-</span></li> -->
+                                            <li class="list-inline-item"><span class="btn btn-success"
+                                                    id="btn-minus" onclick="minusQuantity()">-</span></li>
                                             <li class="list-inline-item"><span class="badge bg-secondary"
-                                                    id="car-quantity">1</span></li>
-                                            <!-- <li class="list-inline-item"><span class="btn btn-success"
-                                                    id="btn-plus">+</span></li> -->
+                                                    id="currentCarQuantity"> 0 </span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success"
+                                                    id="btn-plus" onclick="addQuantity()">+</span></li>
                                         </ul>
+                                        <p id="quantity-message"></p>
                                     </div>
                                 </div>
                                 <div class="row pb-3">
@@ -420,8 +339,8 @@
                                             value="buy">Buy</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button id="card-submit" type="submit" class="btn btn-lg" name="submit"
-                                            value="addtocard">Add To Cart</button>
+                                        <button id="addToCart" type="submit" class="btn btn-lg" name="submit"
+                                            >Add To Cart</button>
                                     </div>
                                 </div>
                             </form>
@@ -999,6 +918,7 @@
       <script src="../js/product-color-switch.js"></script>
       <script src="../js/home.js"></script>
       <script src="../js/productDetail.js"> </script>
+      <script src="../js/cart.js"></script>
   
 </body>
 

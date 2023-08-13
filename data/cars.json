@@ -7,7 +7,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.",
       "quantity": 2,
-      "model": "Wrangler Jeep"
+      "model": "Wrangler Jeep",
+      "color": "black"
     },
     {
       "id":2,
@@ -17,7 +18,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.",
       "quantity": 3,
-      "model": "subaru Jeep"
+      "model": "subaru Jeep",
+      "color": "drak blue"
     },
     {
       "id": 3,
@@ -27,7 +29,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
       "quantity": 1,
-      "model": "honda Jeep"
+      "model": "honda Jeep",
+      "color": "white"
     },
     {
       "id": 4,
@@ -37,7 +40,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
       "quantity": 2,
-      "model": "subaru Jeep"
+      "model": "subaru Jeep",
+      "color": "blueish"
     },
     {
       "id": 5,
@@ -47,7 +51,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
       "quantity": 4,
-      "model": "Wrangler Jeep"
+      "model": "Wrangler Jeep",
+      "color": "red"
   
     },
     {
@@ -58,7 +63,8 @@
       "title": "2023 JK WRANGLER RUBICON",
       "description": "Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.",
       "quantity": 0,
-      "model": "honda Jeep"
+      "model": "honda Jeep",
+      "color": "grey"
     }
   ]
   
