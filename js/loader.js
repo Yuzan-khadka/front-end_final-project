@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
     if (loaderWrapper) {
       setTimeout(function() {
         loaderWrapper.style.display = 'none';
-      }, 4000); // 2000 milliseconds = 2 seconds
+      }, 2000); // 2000 milliseconds = 2 seconds
   
       document.body.style.overflow = 'auto'; // Enable scrolling once the page is fully loaded
     }
