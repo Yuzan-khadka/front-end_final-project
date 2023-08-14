@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/loader.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- css -->
     <link rel="stylesheet" href="../css/home.css" />
@@ -19,6 +20,16 @@
 <body>
     <!-- Header -->
     <!-- Start of Top Navbar -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+        </div>
+      </div>
     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="nav_top">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
@@ -27,7 +38,7 @@
                     <a class="navbar-sm-brand text-light text-decoration-none" id="user-email"
                         href="#">info@motors.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">437-799-7825</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">437-299-1234</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/" target="_blank"><i
@@ -62,7 +73,7 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.html">Home</a>
+                            <a class="nav-link" href="./home.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
@@ -459,6 +470,7 @@
     <script src="../js/dropdown-toggle.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/cart.js"></script>
+    <script src="../js/loader.js"></script>
   
 </body>
 
