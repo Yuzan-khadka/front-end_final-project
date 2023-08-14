@@ -12,6 +12,19 @@ body {
   background-size: cover;
 }
 
+/* Add animation styles for the heading */
+.hover-animate {
+  position: relative;
+  color: #fff;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.hover-animate:hover {
+  color: #e74c3c; /* Change color on hover */
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+
 .input-field {
   border: 1px solid;
   border-color: var(--themeColor);
