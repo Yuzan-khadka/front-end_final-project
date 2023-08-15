@@ -1,0 +1,75 @@
+.text-light { color: #cfd6e1 !important;}
+.h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px !important;
+    font-weight: 200 !important;
+  }
+  /* Accordion */
+.accordion a { color: #000;}
+.accordion a:hover { color: #333d4a;}
+  /* Shop */
+  .shop-top-menu a:hover { color: #69bb7e !important;}
+  /* Product */
+  .product-wap { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);}
+  .product-wap .product-color-dot.color-dot-red { background:#f71515;}
+  .product-wap .product-color-dot.color-dot-blue { background:#6db4fe;}
+  .product-wap .product-color-dot.color-dot-black { background:#000000;}
+  .product-wap .product-color-dot.color-dot-light { background:#e0e0e0;}
+  .product-wap .product-color-dot.color-dot-green { background:#0bff7e;}
+  .card.product-wap .card .product-overlay {
+    background: rgba(0,0,0,.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+  }
+  .card.product-wap:hover .card .product-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+  .card.product-wap a { color: #000;}
+  #carousel-related-product .slick-slide:focus { outline: none !important;}
+  #carousel-related-product .slick-dots li button:before {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  /* Brand */
+  .brand-img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: .5s;
+  }
+  .brand-img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  
+  /* Carousel Brand */
+  .tempaltemo-carousel .h1 {
+    font-size: .5em !important;
+    color: #000 !important;
+  }
+ 
+  
+  /* Small devices (landscape phones, 576px and up)*/
+  .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {
+    font-size: 12px !important;
+  }
+  .product-wap .product-color-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  @media (min-width: 576px) {
+    .tempaltemo-carousel .h1 { font-size: 1em !important;}
+  }
+
+  /* Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) {
+    .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
+    .product-wap .product-color-dot {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  
