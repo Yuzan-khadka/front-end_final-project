@@ -1,14 +1,21 @@
+// function to load cart from local storage
 function loadCartItems() {
+    // getting element cartItems
     const cartContainer = document.getElementById("cartItems");
     cartContainer.innerHTML = ""; // Clear the cartContainer
+    // getting the logged data from local storage
     const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
+    // creating a unquie name base on user email for storing cart elements
     const cartName = 'cartList-'+logData['email']
 
+    // checking if we have cart store in local storage 
     const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
     let totalCarRentPrice = 0
+    // rendering the cart items
     for (const carId in cartList) {
         const carData = cartList[carId];
         const cartItem = document.createElement("div");
+        // calculating the prices
         let carRentPrice = removeDollar(carData.price) * carData.quantity
         
         cartItem.className = "d-flex align-items-center mb-5";
@@ -33,13 +40,14 @@ function loadCartItems() {
         cartContainer.appendChild(cartItem)
         totalCarRentPrice += carRentPrice
     }
+    // placeing the price (tax and total rent)
     let tax =(totalCarRentPrice*0.13)
     let rentWithTax = totalCarRentPrice+tax 
     document.getElementById('taxRentAmount').textContent = '$'+ tax.toFixed(2)
     document.getElementById('totalRentAmount').textContent = '$'+(rentWithTax).toFixed(2)
 }
 
-
+// function to delete the cart item
 function deleteCartItem(carId) {
     const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
     const cartName = 'cartList-'+logData['email']
@@ -50,11 +58,12 @@ function deleteCartItem(carId) {
         localStorage.setItem(cartName, JSON.stringify(cartList));
         // Reload the cart items
         loadCartItems();
-        cartItem();
+        cartItemNum();
     }
 }
 
-function cartItem(){
+// function to change the number in cart icon base on items in cart
+function cartItemNum(){
     const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
     const cartName = 'cartList-'+logData['email']
     const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
@@ -63,13 +72,14 @@ function cartItem(){
 
 }
 
+// calling all the required function when the domcontentloaded
 document.addEventListener("DOMContentLoaded", function () {
     // Call the function to load cart items
     loadCartItems();
-    cartItem();
+    cartItemNum();
 });
 
-
+// function to remove $ and parseInt a price amount
 function removeDollar(price){
     return parseInt(price.replace('$', ''));
 }

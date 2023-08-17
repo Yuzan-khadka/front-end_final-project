@@ -1,6 +1,7 @@
 
 loadCarDetailById(getCarIdFromURL());
 
+// function to get car id from url
 function getCarIdFromURL() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -8,7 +9,7 @@ function getCarIdFromURL() {
     return carId;
 }
 
-
+// function to get data from json file and loading it base on the car id
 function loadCarDetailById(carId) {
     fetch("../data/cars.json")
         .then((response) => response.json())
@@ -30,6 +31,7 @@ function loadCarDetailById(carId) {
         });
 }
 
+// function the load the star elements
 function loadStar(rating) {
     let remainingRating = 5 - rating;
     let result = '';
@@ -47,7 +49,7 @@ function loadStar(rating) {
     return result;
 }
 
-
+// function to subtract the car quantity
 function minusQuantity(){
     const carid = getCarIdFromURL()
     let element = document.getElementById('currentCarQuantity')
@@ -61,6 +63,7 @@ function minusQuantity(){
     }
 }
 
+// function to add the car quantity
 function addQuantity(){
     const carid = getCarIdFromURL()
     let element = document.getElementById('currentCarQuantity')
@@ -74,39 +77,44 @@ function addQuantity(){
     }
 }
 
+// function to load the message in the message section
 function updateQuantityMessage(message){
     const messageElement = document.getElementById("quantity-message");
     messageElement.textContent = message
 }
 
-
+// creating a click event listener to element with id of addToCart to the a functionality 
 document.getElementById('addToCart').addEventListener('click', (event) => {    
     let carId = event.target.value;
     event.preventDefault();
+    // geting the current car number in the stock
     const currentQuantity = parseInt(document.getElementById('currentCarQuantity').textContent);
+    // checking if the user is logged in or not
     const logData = checkIfLogged()
     if (!logData){
         document.getElementById('quantity-message').textContent = "You are not logged, sign-in or register."
         return
     }
-
+    // unquie name for cart element in local storage
     const cartName = 'cartList-'+logData['email']
+    // checking if zero item is selected
     if (currentQuantity === 0){
         document.getElementById('quantity-message').textContent = "No item was quantity added."
         return
     }
-    
+    // fetching data from json
     fetch('../data/cars.json')
       .then((response) => response.json())
       .then((data) => {
+        // matching the data with given id
         const product = data.find((product) => product.id === parseInt(carId));
         
         if (product) {
+            // if found storing it in the local storages
             const existingItems = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {}; 
             const carsQualityList = localStorage.getItem('carsList') ? JSON.parse(localStorage.getItem('carsList')) : {};            
             const availableQuantity = carsQualityList[carId] ? carsQualityList[carId] : 0;
-           
-
+           // adding the item 
             if (!existingItems[carId]) {
                 existingItems[carId] = {
                     imageSrc: product.imageSrc,
@@ -116,14 +124,15 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
                     quantity: currentQuantity
                 };
             } else {
+                // updating the quantity
                 existingItems[carId].quantity += currentQuantity;
             }
-
+            // checking if the number doesn't exceed the stock amount
             if (availableQuantity < existingItems[carId].quantity) {
                 document.getElementById('quantity-message').textContent = `Exceeded available quantity from stock. Max: ${availableQuantity}`;
                 return;
             }
-            
+            // storing the result in local storage
             localStorage.setItem(cartName, JSON.stringify(existingItems));
             console.log('Item added to cart:', existingItems);
             loadCartItems();
@@ -143,7 +152,7 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
     });
 });
 
-
+// function to check and return the logged data
 function checkIfLogged(){
     const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
     return logData

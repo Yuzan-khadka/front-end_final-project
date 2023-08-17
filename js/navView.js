@@ -1,3 +1,5 @@
+
+// function to load the html component of nav section
 function loadNavBar(){
     const navElement = document.createElement('div')
     navElement.innerHTML=`

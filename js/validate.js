@@ -31,7 +31,7 @@ function checkEmail(event){
         error.textContent = ""
     }
 }
-
+// function to check if email already exist
 function checkIfEmailExist(email){
     const existingData = JSON.parse(localStorage.getItem("Registered " + email)) || []
     if (existingData){
@@ -78,7 +78,7 @@ function isValidEmail(email){
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
-
+// to valid the password by using regex
 function isValidPassword(password){
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     return passwordRegex.test(password);
