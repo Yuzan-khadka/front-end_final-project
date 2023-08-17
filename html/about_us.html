@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About Us</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/about_us.css" />
+    <link rel="stylesheet" href="../css/slick-slider.css">
+    <link rel="stylesheet" href="../css/shopping-cart.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand logo h1 mb-0 align-self-center" href="home.html">
+                MoToRs
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse d-lg-flex justify-content-lg-between" id="main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about_us.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex gap-3">
+                    <div id="user-unlogged-nav">
+                        <a type="button" class="btn btn-success text-white" href="../html/login.html">Login</a>
+                        <a type="button" class="btn register-btn text-white"
+                            href="../html/registration.html">Register</a>
+                    </div>
+                    <div class="d-none d-flex" id="user-logged-nav">
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                <span
+                                    class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark" id="cartNumItem">0</span>
+                            </a>
+                            <!-- uncomment and display this block if cart has no item -->
+                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                   <li><a class="dropdown-item" href="#">You have zero cars in cart!</a></li>
+                               </ul> -->
+                            <!-- cart drop down -->
+                            <div class="dropdown-menu cart" aria-labelledby="dropdownMenuButton1">
+                                <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col">
+                                        <div class="card shopping-cart" style="border-radius: 15px;">
+                                            <div class="card-body text-black">
+
+                                                <div class="row">
+                                                    <div class="col px-2 py-2 px-md-5 py-md-4">
+
+                                                        <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Items
+                                                            you rented</h3>
+                                                            <!-- Load cart items here -->
+                                                             <div id="cartItems"></div>
+                                                     
+                                                        <hr class="mb-4"
+                                                            style="height: 2px; background-color: #1266f1; opacity: 1;">
+
+                                                        <div class="d-flex justify-content-between px-x">
+                                                            <p class="fw-bold">Discount:</p>
+                                                            <p class="fw-bold">$</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between p-2 mb-2"
+                                                            style="background-color: #e1f5fe;">
+                                                            <h5 class="fw-bold mb-0">Total:</h5>
+                                                            <h5 class="fw-bold mb-0">$</h5>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-block checkout-btn">
+                                                        Go to checkout
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- cart dropdown close -->
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="../html/profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" onclick="logoutAction()" href="#">Logout</a></li>
+                                <!-- <li><a class="dropdown-item" href="#"></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>    
+    <div class="benefits-heading">
+        <h2>Our Benefits</h2>
+    </div>
+    <section class="benefits">
+        <div class="benefit">
+            <img src="../images/as001.jpg" alt="Convenience">
+            <h3>Convenience</h3>
+            <p>Our car rental services offer unmatched convenience, allowing you to book a vehicle from the comfort of your home.</p>
+        </div>
+        <div class="benefit">
+            <img src="../images/as002.jpg" alt="Variety">
+            <h3>Wide Variety</h3>
+            <p>Choose from a diverse range of vehicles to suit your needs, from economy cars to luxury SUVs.</p>
+        </div>
+        <div class="benefit">
+            <img src="../images/as003.jpg" alt="Location">
+            <h3>Location</h3>
+            <p>Your Choice of Any Pickup Location</p>
+        </div>
+        <div class="benefit">
+            <img style="width: 115px; height: 115px;" src="../images/dollor_save.png" alt="Affordable">
+            <h3>Affordable Rates</h3>
+            <p>Enjoy competitive pricing and flexible rental options that fit your budget.</p>
+        </div>
+    </section>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <p>"Great service and amazing cars to choose from!"</p>
+                <p class="author">- John Doe</p>
+            </div>
+            <div class="slide">
+                <p>"Fast and efficient. Will definitely use again."</p>
+                <p class="author">- Jane Smith</p>
+            </div>
+            <div class="slide">
+                <p>"Best car rental experience I've ever had!"</p>
+                <p class="author">- Michael Johnson</p>
+            </div>
+        </div>
+        <div class="dots"></div>
+    </div>
+   
+    
+    
+
+     <!-- Start Footer -->
+     <footer class="bg-dark" id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 border-bottom pb-3 border-light logo">Motors</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Steeles Avenue Road
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="#">437-799-7828</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="#">info@motors.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Brands</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="brands_shop.html">Volvo</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Subaru</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Wrangler</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Honda</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Ford</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Audi</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="home.html">Home</a></li>
+                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
+                        <li><a class="text-decoration-none" href="xhop.html">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="contact_html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2023 Front End Project
+                            | Designed by CodeStealers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+    <script src="../js/about_us.js"></script>
+</body>
+</html>
