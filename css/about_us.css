@@ -1,11 +1,14 @@
 body {
     font-family: Arial, sans-serif;
 }
+
 section.benefits {
     padding: 40px;
     text-align: center;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center items horizontally */
 }
 
 .benefits-heading {
@@ -16,9 +19,12 @@ section.benefits {
 }
 
 .benefit {
-    margin: 10px; /* Add space around each benefit */
-    max-width: 300px; /* Limit width of each benefit */
-    text-align: center; /* Center text within each benefit */
+    margin: 10px;
+    /* Add space around each benefit */
+    max-width: 300px;
+    /* Limit width of each benefit */
+    text-align: center;
+    /* Center text within each benefit */
 }
 
 .benefit img {
@@ -29,30 +35,34 @@ section.benefits {
 }
 
 .benefit h3 {
-    margin-top: 10px; /* Add space below image */
+    margin-top: 10px;
+    /* Add space below image */
 }
 
 
 .slider-container {
-    width: 100%;
+    width: auto;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     padding: 40px;
-    padding-left: 200px;
+    padding-left: 250px;
     padding-right: 200px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
+    /* align-items: center; */
+    text-align: center;
 }
 
 .slider-header {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
-    color: var(--themeColor); /* You can customize the color */
+    color: var(--themeColor);
+    /* You can customize the color */
 }
 
 .slider-text {
@@ -67,20 +77,25 @@ section.benefits {
 
 .phone-number {
     font-weight: bold;
-    color: var(--themeColor); /* You can customize the color */
+    color: var(--themeColor);
+    /* You can customize the color */
 }
 
 
 .slider {
     display: flex;
-    transition: transform 0.5s; /* Add transition for smooth sliding */
+    transition: transform 0.5s;
+    /* Add transition for smooth sliding */
+    text-align: center;
 }
 
 .slide {
     flex: 0 0 100%;
     padding: 20px;
-    display: flex; /* Display reviews as flex containers */
-    align-items: center; /* Center content vertically */
+    display: flex;
+    /* Display reviews as flex containers */
+    align-items: center;
+    /* Center content vertically */
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -98,8 +113,10 @@ section.benefits {
 .review-image img {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Make the image round */
-    object-fit: cover; /* Ensure the image fills the round container */
+    border-radius: 50%;
+    /* Make the image round */
+    object-fit: cover;
+    /* Ensure the image fills the round container */
 }
 
 .review-text {
@@ -122,6 +139,22 @@ section.benefits {
     margin-top: 10px;
 }
 
+/* .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #007BFF;
+}
+
+.dot:hover {
+    background-color: #0056b3;
+} */
 .dot {
     width: 10px;
     height: 10px;
@@ -137,4 +170,113 @@ section.benefits {
 
 .dot:hover {
     background-color: #0056b3;
+}
+
+
+
+/* responsive */
+/* Mobile-first styles */
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        margin: 10px auto;
+        max-width: 80%;
+        /* Reduce width for smaller screens */
+    }
+
+    .slider-container {
+        padding: 40px;
+        padding-left: 20px;
+        /* Adjust the left padding for better centering */
+        padding-right: 20px;
+        /* Adjust the right padding for better centering */
+
+    }
+
+    .slider-text {
+        margin-top: 10px;
+    }
+
+    .slider {
+        display: flex;
+        /* Change to block display for mobile */
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .slide {
+        padding: 10px;
+        width: 100%;
+        /* Ensure each slide takes full width */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .dots {
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        margin: 0 3px;
+    }
+
+    .slider-header {
+        font-size: 24px;
+    }
+
+    .slider-text p {
+        font-size: 16px;
+    }
+
+    .phone-number {
+        font-size: 16px;
+    }
+
+    .review-text {
+        font-size: 14px;
+    }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .slider-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 992px) {
+    .slider-container {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .slider-header {
+        font-size: 32px;
+    }
+
+    .slider-text p {
+        font-size: 18px;
+    }
+
+    .phone-number {
+        font-size: 18px;
+    }
+
+    .review-text {
+        font-size: 16px;
+    }
 }

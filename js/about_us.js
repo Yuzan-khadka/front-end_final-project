@@ -1,85 +1,62 @@
-// const slides = document.querySelectorAll('.slide');
-// const dotsContainer = document.querySelector('.dots');
-// let currentSlide = 0;
-
-// function showSlide(index) {
-//     slides.forEach(slide => slide.classList.remove('active'));
-//     slides[index].classList.add('active');
-//     updateDots(index);
-// }
-
-// function updateDots(index) {
-//     const dots = document.querySelectorAll('.dot');
-//     dots.forEach(dot => dot.classList.remove('active'));
-//     dots[index].classList.add('active');
-// }
-
-// function nextSlide() {
-//     currentSlide++;
-//     if (currentSlide >= slides.length) {
-//         currentSlide = 0;
-//     }
-//     showSlide(currentSlide);
-// }
-
-// function startSlider() {
-//     setInterval(nextSlide, 3000); // Auto slide every 3 seconds
-// }
-
-// startSlider();
-// showSlide(currentSlide);
-
-// Get slider and slide elements
+// Get references to slider, slides, and dot elements
 const slider = document.querySelector('.slider');
 const slides = Array.from(document.querySelectorAll('.slide'));
+const dots = Array.from(document.querySelectorAll('.dot'));
 
-// Get dots container and create dot elements
-const dotsContainer = document.querySelector('.dots');
-slides.forEach(() => {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    dotsContainer.appendChild(dot);
-});
-
-const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
-
-// Initialize current slide index
+// Initialize variables
 let currentSlideIndex = 0;
+let intervalId;
 
-// Function to update slide classes and dot indicators
+// Function to update slider display
 function updateSlider() {
+    // Loop through slides and adjust their position and opacity
     slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        dots[index].classList.remove('active');
+        slide.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        slide.style.opacity = index === currentSlideIndex ? 1 : 0;
+        dots[index].classList.toggle('active', index === currentSlideIndex);
     });
-
-    slides[currentSlideIndex].classList.add('active');
-    dots[currentSlideIndex].classList.add('active');
 }
 
-// Function to handle slide navigation
+// Function to navigate to a specific slide
 function navigateToSlide(index) {
     currentSlideIndex = index;
     updateSlider();
-    slider.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// Initialize slider
-updateSlider();
-
-// Handle dot click events
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        navigateToSlide(index);
-    });
-});
-
-// Automatic slide transition
+// Function for automatic slide transition
 function autoSlide() {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
     updateSlider();
-    slider.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
 }
 
-// Set interval for automatic slide transition
-setInterval(autoSlide, 3000); // Change slide every 3 seconds
+// Start automatic slide show
+function startAutoSlide() {
+    intervalId = setInterval(autoSlide, 3000);
+}
+
+// Pause automatic slide show
+function pauseAutoSlide() {
+    clearInterval(intervalId);
+    intervalId = null;
+}
+
+// Add click event listeners to dot indicators
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        navigateToSlide(index);
+        pauseAutoSlide();
+    });
+});
+
+// Initial setup: update slider and start auto slide
+updateSlider();
+startAutoSlide();
+
+// Adjust behavior on window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 767) {
+        pauseAutoSlide();
+    } else {
+        startAutoSlide();
+    }
+});
