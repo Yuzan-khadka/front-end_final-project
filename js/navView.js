@@ -108,10 +108,10 @@ function loadNavBar(){
 
                                                 </div>
 
-                                                <button type="button"
-                                                    class="btn btn-primary btn-block checkout-btn">
+                                                <a type="button" href="checkout-form.html"
+                                                    class="btn btn-primary btn-block checkout-btn text-white">
                                                     Go to checkout
-                                                </button>
+                                                </a>
                                             </div>
 
                                         </div>
