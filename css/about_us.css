@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
 }
 section.benefits {
     padding: 40px;
@@ -35,27 +34,53 @@ section.benefits {
 
 
 .slider-container {
-    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
     padding: 40px;
+    padding-left: 200px;
+    padding-right: 200px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
-    overflow: hidden;
 }
+
+.slider-header {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--themeColor); /* You can customize the color */
+}
+
+.slider-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.slider-text p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.phone-number {
+    font-weight: bold;
+    color: var(--themeColor); /* You can customize the color */
+}
+
 
 .slider {
     display: flex;
-    /* overflow: hidden; */
     transition: transform 0.5s; /* Add transition for smooth sliding */
 }
 
 .slide {
     flex: 0 0 100%;
     padding: 20px;
-    text-align: center;
+    display: flex; /* Display reviews as flex containers */
+    align-items: center; /* Center content vertically */
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -64,7 +89,22 @@ section.benefits {
     opacity: 1;
 }
 
+.review {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
+.review-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image fills the round container */
+}
+
+.review-text {
+    flex: 1;
+}
 
 
 
