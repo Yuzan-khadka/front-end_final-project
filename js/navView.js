@@ -49,7 +49,7 @@ function loadNavBar(){
                         <a class="nav-link" href="./home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="./about_us.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.html">Shop</a>
