@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+section.benefits {
+    padding: 40px;
+    text-align: center;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+}
+
+.benefits-heading {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.benefit {
+    margin: 10px; /* Add space around each benefit */
+    max-width: 300px; /* Limit width of each benefit */
+    text-align: center; /* Center text within each benefit */
+}
+
+.benefit img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.benefit h3 {
+    margin-top: 10px; /* Add space below image */
+}
+
+
+.slider-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s; /* Add transition for smooth sliding */
+}
+
+.slide {
+    flex: 0 0 100%;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.author {
+    font-style: italic;
+    margin-top: 10px;
+    color: #888;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #007BFF;
+}
+
+.dot:hover {
+    background-color: #0056b3;
+}
