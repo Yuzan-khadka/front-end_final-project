@@ -4,9 +4,7 @@
 
 user_nav();
 
-
-
-
+// hiding the login and register button if the logged data is found
 function user_nav(){
     if(loggedData){
         const user_logged_nav = document.getElementById('user-logged-nav')
@@ -17,6 +15,7 @@ function user_nav(){
     }
 } 
 
+// function to logout 
 function logoutAction(){
     localStorage.removeItem("logged data")
     user_nav()
