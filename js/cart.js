@@ -69,7 +69,19 @@ function cartItemNum(){
     const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
     const numberOfItems = Object.keys(cartList).length;
     document.getElementById('cartNumItem').textContent = numberOfItems
+    // Update cart icon badge
+    document.getElementById('cartNumItem').textContent = numberOfItems;
 
+    // Toggle empty cart message visibility
+    const emptyCartMessage = document.getElementById('emptyCartMessage');
+    const cartListDisplay = document.getElementById('cart_item_list')
+    if (numberOfItems === 0) {
+        emptyCartMessage.classList.remove('d-none'); // Completely remove the element from the DOM
+        cartListDisplay.classList.add('d-none')
+    } else {
+        emptyCartMessage.classList.add('d-none'); // Add the "d-none" class to hide the message
+        cartListDisplay.classList.remove('d-none')
+    }
 }
 
 // calling all the required function when the domcontentloaded

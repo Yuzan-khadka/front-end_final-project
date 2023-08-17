@@ -136,7 +136,7 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
             localStorage.setItem(cartName, JSON.stringify(existingItems));
             console.log('Item added to cart:', existingItems);
             loadCartItems();
-            cartItem();
+            cartItemNum();
             
             // Reset the current quantity display
             document.getElementById('currentCarQuantity').textContent = "0";

@@ -75,17 +75,18 @@ function loadNavBar(){
                                 class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark" id="cartNumItem">0</span>
                         </a>
                         <!-- uncomment and display this block if cart has no item -->
-                        <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                         <!--<ul class="dropdown-menu d-none" id="emptyCartMessage" aria-labelledby="dropdownMenuButton1">
                                <li><a class="dropdown-item" href="#">You have zero cars in cart!</a></li>
-                           </ul> -->
+                           </ul> --> 
                         <!-- cart drop down -->
                         <div class="dropdown-menu cart" aria-labelledby="dropdownMenuButton1">
+                        
                             <div class="row d-flex justify-content-center align-items-center h-100">
                                 <div class="col">
                                     <div class="card shopping-cart" style="border-radius: 15px;">
                                         <div class="card-body text-black">
 
-                                            <div class="row">
+                                            <div class="row" id="cart_item_list">
                                                 <div class="col px-2 py-2 px-md-5 py-md-4">
 
                                                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Items
@@ -113,6 +114,12 @@ function loadNavBar(){
                                                     Go to checkout
                                                 </a>
                                             </div>
+                                            <div  id="emptyCartMessage" class=" row d-none">
+                                                <div class="col px-2 py-2 px-md-5 py-md-4">
+                                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">You have zero cars in cart!</h3>
+                                                </div>
+                                            </div>
+
 
                                         </div>
 
