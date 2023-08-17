@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/slick-slider.css">
+    <link rel="stylesheet" href="../css/shopping-cart.css">
+    <link rel="stylesheet" href="../css/shop.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Start of Top Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" id="user-email"
+                        href="#">info@motors.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">437-299-1234</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/" target="_blank"><i
+                            class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
+                            class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End of  Top Navbar -->
+
+
+    <!-- Start of Main Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand logo h1 mb-0 align-self-center" href="home.html">
+                MoToRS
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse d-lg-flex justify-content-lg-between" id="main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex gap-3">
+                    <div id="user-unlogged-nav">
+                        <a type="button" class="btn btn-success text-white" href="../html/login.html">Login</a>
+                        <a type="button" class="btn register-btn text-white"
+                            href="../html/registration.html">Register</a>
+                    </div>
+                    <div class="d-none d-flex" id="user-logged-nav">
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                <span
+                                    class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                                    id="cartNumItem">0</span>
+                            </a>
+                            <!-- uncomment and display this block if cart has no item -->
+                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                   <li><a class="dropdown-item" href="#">You have zero cars in cart!</a></li>
+                               </ul> -->
+                            <!-- cart drop down -->
+                            <div class="dropdown-menu cart" aria-labelledby="dropdownMenuButton1">
+                                <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col">
+                                        <div class="card shopping-cart" style="border-radius: 15px;">
+                                            <div class="card-body text-black">
+
+                                                <div class="row">
+                                                    <div class="col px-2 py-2 px-md-5 py-md-4">
+
+                                                        <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Items
+                                                            you rented</h3>
+                                                        <!-- Load cart items here -->
+                                                        <div id="cartItems"></div>
+
+                                                        <hr class="mb-4"
+                                                            style="height: 2px; background-color: #1266f1; opacity: 1;">
+
+                                                        <div class="d-flex justify-content-between px-x">
+                                                            <p class="fw-bold">Discount:</p>
+                                                            <p class="fw-bold">$</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between p-2 mb-2"
+                                                            style="background-color: #e1f5fe;">
+                                                            <h5 class="fw-bold mb-0">Total:</h5>
+                                                            <h5 class="fw-bold mb-0">$</h5>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-block checkout-btn">
+                                                        Go to checkout
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- cart dropdown close -->
+                        <div class="dropdown">
+                            <a class="nav-icon position-relative text-decoration-none dropdown-toggle"
+                                data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="../html/profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" onclick="logoutAction()" href="#">Logout</a></li>
+                                <!-- <li><a class="dropdown-item" href="#"></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- End of Main Navbar -->
+    <!-- End Header -->
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <!-- <div class="col-md-6">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">RENT CARS</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Jeep Wrangler</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none" href="#">Cars</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                  
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="../images/product1-green.jpg">
+                                <div
+                                    class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i
+                                                    class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="#"><i
+                                                    class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="h3 text-decoration-none">2023 JK WRANGLER RUBICON</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span
+                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div div="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#"
+                                tabindex="-1">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
+                                href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Content -->
+
+    <!-- Start Brands -->
+    <section class="bg-light py-5">
+        <div class="container my-4">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Our Brands</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+                <div class="col-lg-9 m-auto tempaltemo-carousel">
+                    <div class="row d-flex flex-row">
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev">
+                                <i class="text-light fas fa-chevron-left"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+
+                        <!--Carousel Wrapper-->
+                        <div class="col">
+                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example"
+                                data-bs-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner product-links-wap" role="listbox">
+
+                                    <!--First slide-->
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/audi-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/subaru-logo.jpg" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/honda-logo.jpg" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End First slide-->
+
+                                    <!--Second slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Second slide-->
+
+                                    <!--Third slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img"
+                                                        src="../images/volvo-logo.png" alt="Brand Logo"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Third slide-->
+
+                                </div>
+                                <!--End Slides-->
+                            </div>
+                        </div>
+                        <!--End Carousel Wrapper-->
+
+                        <!--Controls-->
+                        <div class="col-1 align-self-center">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next">
+                                <i class="text-light fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                        <!--End Controls-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Brands-->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 border-bottom pb-3 border-light logo">Motors</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Steeles Avenue Road
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="#">437-799-7828</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="#">info@motors.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Brands</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="brands_shop.html">Volvo</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Subaru</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Wrangler</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Honda</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Ford</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Audi</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="home.html">Home</a></li>
+                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
+                        <li><a class="text-decoration-none" href="xhop.html">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="contact_html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2023 Front End Project
+                            | Designed by CodeStealers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- <script src="../js/base.js"></script> -->
+    <!-- Load fontawesome icons -->
+    <script src="https://kit.fontawesome.com/d8c50744cf.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap js file -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- jquery -->
+    <script src="../js/jquery-3.7.0.min.js"></script>
+
+
+</body>
+
+</html>
