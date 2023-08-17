@@ -1,91 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap css file -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Conatct Us page</title>
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/loader.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- css -->
     <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/slick-slider.css">
     <link rel="stylesheet" href="../css/shopping-cart.css">
 
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
-</head>
-
-<body>
-
-    <!-- Header -->
-    <div id="navSection"></div>   
-
-    <!-- End of Main Navbar -->
-    <!-- End Header -->
-
-    <section class="vh-100" style="background-color: #f4f5f7;">
-        <div class="container py-md-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-lg-6 my-4 my-lg-0">
-                    <div class="card mb-3" style="border-radius: .5rem;">
-                        <div class="row g-0">
-                            <div class="col-md-4 gradient-custom text-center text-white"
-                                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                <img src="../images/ava1-bg.webp"
-                                    alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                                <h5>Marie Horwitz</h5>
-                                <i class="far fa-edit mb-5"></i>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-4">
-                                    <h6>Information</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>Email</h6>
-                                            <p class="text-muted">info@example.com</p>
-                                        </div>
-                                        <div class="col-6 mb-3">
-                                            <h6>Phone</h6>
-                                            <p class="text-muted">123 456 789</p>
-                                        </div>
-                                        <div class="col-6 mb-3">
-                                            <h6>Address</h6>
-                                            <p class="text-muted">279 YorkLand Blvd</p>
-                                        </div>
-                                    </div>
-                                    <!-- <h6>Projects</h6>
-                <hr class="mt-0 mb-4">
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Recent</h6>
-                    <p class="text-muted">Lorem ipsum</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Most Viewed</h6>
-                    <p class="text-muted">Dolor sit amet</p>
-                  </div>
-                </div> -->
-                                    <h6>Social Handles</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="d-flex justify-content-start">
-                                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3 social-icons"></i></a>
-                                        <a href="#!"><i class="fab fa-twitter fa-lg me-3 social-icons"></i></a>
-                                        <a href="#!"><i class="fab fa-instagram fa-lg social-icons"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  </head>
+  <body>
+    <div id="navSection"></div>    
+    
+      <div class="box">
+        <!--form-->
+        <div class="contact form">
+          <h3>Contact Form</h3>
+          <form>
+            <div class="formBox">
+              <div class="row50">
+                <div class="inputBox">
+                  <span>First name</span>
+                  <input type="text" placeholder="Enter your first name" />
+                </div>
+                <div class="inputBox">
+                  <span>Last Name </span>
+                  <input type="text" placeholder="Enter your last name" />
+                </div>
+              </div>
+              <div class="row50">
+                <div class="inputBox">
+                  <span>Email</span>
+                  <input type="text" placeholder="Enter your email-id" />
+                </div>
+                <div class="inputBox">
+                  <span>Mobile: </span>
+                  <input type="text" placeholder="Enter your mobile number" />
+                </div>
+              </div>
+              <div class="row100">
+                <div class="inputBox">
+                  <span>Message</span>
+                  <textarea placeholder="Write your message"></textarea>
                 </div>
             </div>
+            <div class="row100">
+              <div class="inputBox">
+                <button>
+                Send Message
+              </button>
+                
+              </div>
+          </div>
+          </form>
         </div>
-    </section>
+        <!--info-box-->
+        <div class="contact info">
+          <h3> Contact  Info</h3>
+          <div class="infoBox">
+            <div>
+              <span>
+                <ion-icon name="location"></ion-icon>
+              </span>
+              <p>7 Westhumber Blvd, Etobicoke , Toronto , Ontario M9W3M2</p>
+            </div>
+          </div>
+          <div>
+            <span>
+              <ion-icon name="mail"></ion-icon>
+            </span>
+               <a href="mailto:janimeet2908@gmail.com" >janimeet2908@gmail.com</a>
+          </div>
+          <div>
+            <span>
+              <ion-icon name="call"></ion-icon>
+            </span>
+               <a href="tel:+1 4374292908">+1 437-429-2908</a>
+          </div>  
+          <ul class="sci">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          </ul>
+        </div>
+        </div>
 
-
+        <div class="contact map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.1815639376996!2d-79.57812962464209!3d43.72755494761971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3a6441d9f62b%3A0xdfc80dc10483e0eb!2s7%20Westhumber%20Blvd%2C%20Etobicoke%2C%20ON%20M9W%203M2!5e0!3m2!1sen!2sca!4v1691696735509!5m2!1sen!2sca"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
     <!-- Start Footer -->
     <footer class="bg-dark" id="footer">
         <div class="container">
@@ -112,12 +123,12 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Brands</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="shop.html">Volvo</a></li>
-                        <li><a class="text-decoration-none" href="shop.html">Subaru</a></li>
-                        <li><a class="text-decoration-none" href="shop.html">Wrangler</a></li>
-                        <li><a class="text-decoration-none" href="shop.html">Honda</a></li>
-                        <li><a class="text-decoration-none" href="shop.html">Ford</a></li>
-                        <li><a class="text-decoration-none" href="shop.html">Audi</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Volvo</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Subaru</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Wrangler</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Honda</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Ford</a></li>
+                        <li><a class="text-decoration-none" href="brands_shop.html">Audi</a></li>
                     </ul>
                 </div>
 
@@ -131,6 +142,7 @@
                         <li><a class="text-decoration-none" href="contact_html">Contact</a></li>
                     </ul>
                 </div>
+
             </div>
 
             <div class="row text-light mb-4">
@@ -175,7 +187,10 @@
 
     </footer>
     <!-- End Footer -->
-
+</div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- <script src="../js/base.js"></script> -->
     <!-- Load fontawesome icons -->
     <script src="https://kit.fontawesome.com/d8c50744cf.js" crossorigin="anonymous"></script>
     <!-- Bootstrap js file -->
@@ -194,8 +209,9 @@
     <script src="../js/navView.js"></script>
     <script src="../js/loginAuth.js"></script>
     <script src="../js/dropdown-toggle.js"></script>
+    <script src="../js/home.js"></script>
     <script src="../js/cart.js"></script>
-
-</body>
-
+    <script src="../js/loader.js"></script>
+  
+  </body>
 </html>
