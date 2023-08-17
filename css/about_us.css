@@ -139,22 +139,6 @@ section.benefits {
     margin-top: 10px;
 }
 
-/* .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #007BFF;
-}
-
-.dot:hover {
-    background-color: #0056b3;
-} */
 .dot {
     width: 10px;
     height: 10px;
