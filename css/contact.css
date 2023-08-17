@@ -5,7 +5,7 @@
   font-family: "poppins", sana-serif;
 }
 body {
-  background: linear-gradient(90deg, #0e3959 0%, #0e3959 30%, #03a9f5 100%);
+  background: linear-gradient(90deg, #efefef 0%, #efefef 30%, #efefef 100%);
 }
 .contactUs {
   position: relative;
@@ -160,7 +160,7 @@ body {
 }
 @media (max-width: 860px) {
   body {
-    background: #03a9f5;
+    background: #808080;
   }
   .contactUs {
     padding: 20px;
@@ -219,4 +219,31 @@ body {
     margin-right: 0;
     margin-bottom: 10px; /* Add some space between collapsed links */
   }
+}
+/* Footer */
+footer h2 {
+  color: var(--themeColor) !important;
+}
+
+footer a {
+  color: #dcdde1;
+}
+
+footer a:hover {
+  color: var(--themeColor);
+}
+
+footer ul.footer-link-list li {
+  padding-top: 10px;
+}
+
+footer ul.footer-icons li {
+  width: 2.6em;
+  height: 2.6em;
+  line-height: 2.6em;
+}
+
+footer ul.footer-icons li:hover {
+  background-color: var(--themeColor);
+  transition: 0.5s;
 }
