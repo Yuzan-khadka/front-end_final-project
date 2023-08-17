@@ -1,9 +1,10 @@
 function loadCartItems() {
     const cartContainer = document.getElementById("cartItems");
     cartContainer.innerHTML = ""; // Clear the cartContainer
+    const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
+    const cartName = 'cartList-'+logData['email']
 
-
-    const cartList = localStorage.getItem('cartList') ? JSON.parse(localStorage.getItem('cartList')) : {};
+    const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
     let totalCarRentPrice = 0
     for (const carId in cartList) {
         const carData = cartList[carId];
@@ -40,11 +41,13 @@ function loadCartItems() {
 
 
 function deleteCartItem(carId) {
-    const cartList = localStorage.getItem('cartList') ? JSON.parse(localStorage.getItem('cartList')) : {};
+    const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
+    const cartName = 'cartList-'+logData['email']
+    const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
     
     if (cartList.hasOwnProperty(carId)) {
         delete cartList[carId];
-        localStorage.setItem('cartList', JSON.stringify(cartList));
+        localStorage.setItem(cartName, JSON.stringify(cartList));
         // Reload the cart items
         loadCartItems();
         cartItem();
@@ -52,7 +55,9 @@ function deleteCartItem(carId) {
 }
 
 function cartItem(){
-    const cartList = localStorage.getItem('cartList') ? JSON.parse(localStorage.getItem('cartList')) : {};
+    const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
+    const cartName = 'cartList-'+logData['email']
+    const cartList = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {};
     const numberOfItems = Object.keys(cartList).length;
     document.getElementById('cartNumItem').textContent = numberOfItems
 

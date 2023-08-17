@@ -84,11 +84,13 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
     let carId = event.target.value;
     event.preventDefault();
     const currentQuantity = parseInt(document.getElementById('currentCarQuantity').textContent);
-    if (checkIfLogged()){
+    const logData = checkIfLogged()
+    if (!logData){
         document.getElementById('quantity-message').textContent = "You are not logged, sign-in or register."
         return
     }
 
+    const cartName = 'cartList-'+logData['email']
     if (currentQuantity === 0){
         document.getElementById('quantity-message').textContent = "No item was quantity added."
         return
@@ -100,7 +102,7 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
         const product = data.find((product) => product.id === parseInt(carId));
         
         if (product) {
-            const existingItems = localStorage.getItem('cartList') ? JSON.parse(localStorage.getItem('cartList')) : {}; 
+            const existingItems = localStorage.getItem(cartName) ? JSON.parse(localStorage.getItem(cartName)) : {}; 
             const carsQualityList = localStorage.getItem('carsList') ? JSON.parse(localStorage.getItem('carsList')) : {};            
             const availableQuantity = carsQualityList[carId] ? carsQualityList[carId] : 0;
            
@@ -122,7 +124,7 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
                 return;
             }
             
-            localStorage.setItem('cartList', JSON.stringify(existingItems));
+            localStorage.setItem(cartName, JSON.stringify(existingItems));
             console.log('Item added to cart:', existingItems);
             loadCartItems();
             cartItem();
