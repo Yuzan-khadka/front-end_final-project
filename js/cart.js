@@ -32,8 +32,10 @@ function loadCartItems() {
         cartContainer.appendChild(cartItem)
         totalCarRentPrice += carRentPrice
     }
-    document.getElementById('taxRentAmount').textContent = '$'+(totalCarRentPrice*0.13).toFixed(2)
-    document.getElementById('totalRentAmount').textContent = '$'+totalCarRentPrice
+    let tax =(totalCarRentPrice*0.13)
+    let rentWithTax = totalCarRentPrice+tax 
+    document.getElementById('taxRentAmount').textContent = '$'+ tax.toFixed(2)
+    document.getElementById('totalRentAmount').textContent = '$'+(rentWithTax).toFixed(2)
 }
 
 

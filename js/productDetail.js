@@ -84,8 +84,12 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
     let carId = event.target.value;
     event.preventDefault();
     const currentQuantity = parseInt(document.getElementById('currentCarQuantity').textContent);
+    if (checkIfLogged()){
+        document.getElementById('quantity-message').textContent = "You are not logged, sign-in or register."
+        return
+    }
+
     if (currentQuantity === 0){
-        console.log('asdf')
         document.getElementById('quantity-message').textContent = "No item was quantity added."
         return
     }
@@ -137,3 +141,8 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
     });
 });
 
+
+function checkIfLogged(){
+    const logData = localStorage.getItem('logged data') ? JSON.parse(localStorage.getItem('logged data')): {}
+    return logData
+}
