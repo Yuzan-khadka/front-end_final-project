@@ -35,7 +35,7 @@ section.benefits {
 
 
 .slider-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 40px;
     background-color: #fff;
@@ -43,11 +43,12 @@ section.benefits {
     border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .slider {
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: transform 0.5s; /* Add transition for smooth sliding */
 }
 
