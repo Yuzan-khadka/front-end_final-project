@@ -1,0 +1,34 @@
+[
+    {
+        "Honda": {
+            "img": ["../images/honda/car1.png", "../images/honda/car2.png", "../images/honda/car3.png", "../images/honda/car4.png", "../images/honda/car5.png"],
+            "price": ["$450", "$700", "$300", "$150", "$325"],
+            "star": [4, 4, 5, 3, 3],
+            "model": ["Civic", "Accord", "CR-V", "Pilot", "Fit"]
+        }
+    },
+    {
+        "Subaru": {
+            "img": ["../images/subaru/car1.png", "../images/subaru/car2.png", "../images/subaru/car3.png", "../images/subaru/car4.png"],
+            "price": ["$500", "$650", "$350", "$200"],
+            "star": [4, 4, 3, 5],
+            "model": ["Outback", "Forester", "Impreza", "Legacy"]
+        }
+    },
+    {
+        "Audi": {
+            "img": ["../images/audi/car1.png", "../images/audi/car2.png", "../images/audi/car3.png", "../images/audi/car4.png", "../images/audi/car5.png", "../images/audi/car6.png"],
+            "price": ["$800", "$1200", "$950", "$600", "$1100", "$150"],
+            "star": [5, 4, 5, 4, 5, 4],
+            "model": ["A3", "A4", "A6", "Q5", "Q7", "Q8"]
+        }
+    },
+    {
+        "Volvo": {
+            "img": ["../images/volvo/car1.png", "../images/volvo/car2.png", "../images/volvo/car3.png", "../images/volvo/car4.png", "../images/volvo/car5.png", "../images/volvo/car6.png"],
+            "price": ["$400", "$550", "$275", "$150", "$300", "$213"],
+            "star": [3, 4, 3, 2, 4, 5],
+            "model": ["XC60", "XC90", "S60", "V60", "V90", "XC40"]
+        }
+    }
+]
