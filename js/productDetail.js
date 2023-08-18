@@ -91,7 +91,7 @@ document.getElementById('addToCart').addEventListener('click', (event) => {
     const currentQuantity = parseInt(document.getElementById('currentCarQuantity').textContent);
     // checking if the user is logged in or not
     const logData = checkIfLogged()
-    if (!logData){
+    if (Object.keys(logData).length === 0){
         document.getElementById('quantity-message').textContent = "You are not logged, sign-in or register."
         return
     }
