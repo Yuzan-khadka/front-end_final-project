@@ -175,6 +175,15 @@ body {
       "map"
       "info";
   }
+  .info,
+  .form,
+  .map {
+    padding: 20px;
+  }
+
+  .map iframe {
+    height: 300px; /* Adjust the height as needed */
+  }
 }
 
 /* Style for the navigation bar */
@@ -246,4 +255,7 @@ footer ul.footer-icons li {
 footer ul.footer-icons li:hover {
   background-color: var(--themeColor);
   transition: 0.5s;
+}
+.maincontact {
+  align-items: center;
 }
