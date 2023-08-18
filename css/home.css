@@ -3,14 +3,20 @@
 /* Nav */
 #nav_top {
     min-height: 40px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
 }
-
+#nav_top:hover {
+    background-color: var(--themeColorDarker);
+}
 #nav_top * {
     font-size: 13px !important;
 }
 
 #main_nav a {
     color: #212934;
+    transition: color 0.3s ease-in-out;
+
 }
 
 #main_nav a:hover {
@@ -24,6 +30,7 @@
 .navbar .logo {
     color: var(--themeColor);
     font-weight: 500 !important;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar .nav-btns{
@@ -40,7 +47,13 @@
 /* dropdown */
 .dropdown-menu{
     min-width: auto!important;
-    transform: translate(0px, 10px);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.dropdown:hover .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
 }
 .cart{
     border: none;
@@ -86,7 +99,7 @@
 
 /* featured product card */
 .featured-product .card .card-img-top{
-    transition: 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     scale: 0.9;
 }
 
@@ -94,8 +107,18 @@
     scale: 1.1;
 }
 
+.featured-product .card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+
 .featured-product .card .h2{
     font-size: 1.8em !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.featured-product .card:hover .h2 {
+    color: var(--themeColor);
 }
 
 .featured-product .card .h2:hover{
@@ -109,6 +132,7 @@ footer h2 {
 
 footer a {
     color: #dcdde1;
+    transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
@@ -123,7 +147,9 @@ footer ul.footer-icons li {
     width: 2.6em;
     height: 2.6em;
     line-height: 2.6em;
+    transition: background-color 0.3s ease-in-out;
 }
+
 
 footer ul.footer-icons li:hover {
     background-color: var(--themeColor);

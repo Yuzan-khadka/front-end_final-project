@@ -8,7 +8,6 @@ function performSearch(){
   const query = searchInput.value.toLowerCase();
   // recalling the loadcars function when the input is empty
   if (query == ''){
-    loadCars()
     return;
   }
   // fetching the cars.json data
