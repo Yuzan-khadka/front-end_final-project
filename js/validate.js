@@ -21,10 +21,10 @@ function checkEmail(event){
     const emailField = event.target
     const emailValue = emailField.value.trim()
     const error = emailField.nextElementSibling
-
+    console.log(checkIfEmailExist(emailValue), emailValue)
     if(!isValidEmail(emailValue)){
         error.textContent = "Invalid email format."
-    }else if(!checkIfEmailExist(emailValue)){
+    }else if(checkIfEmailExist(emailValue)){
         error.textContent = "Email already exist, Try another."
         emailField.value = ""
     }else{
