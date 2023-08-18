@@ -13,170 +13,11 @@
     <link rel="stylesheet" href="../css/shopping-cart.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-      <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand logo h1 mb-0 align-self-center" href="home.html">
-          MoToRs
-        </a>
+      <!-- Header -->
+    <div id="navSection"></div>
+      
+      
 
-        <button
-          class="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#main_nav"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="align-self-center collapse navbar-collapse d-lg-flex justify-content-lg-between"
-          id="main_nav"
-        >
-          <div class="flex-fill">
-            <ul
-              class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
-            >
-              <li class="nav-item">
-                <a class="nav-link" href="./home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./about_us.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div class="navbar align-self-center d-flex gap-3">
-            <div id="user-unlogged-nav">
-              <a
-                type="button"
-                class="btn btn-success text-white"
-                href="../html/login.html"
-                >Login</a
-              >
-              <a
-                type="button"
-                class="btn register-btn text-white"
-                href="../html/registration.html"
-                >Register</a
-              >
-            </div>
-            <div class="d-none d-flex" id="user-logged-nav">
-              <div class="dropdown">
-                <a
-                  class="nav-icon position-relative text-decoration-none dropdown-toggle"
-                  data-bs-auto-close="outside"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                  <span
-                    class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
-                    id="cartNumItem"
-                    >0</span
-                  >
-                </a>
-                <!-- uncomment and display this block if cart has no item -->
-                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                   <li><a class="dropdown-item" href="#">You have zero cars in cart!</a></li>
-                               </ul> -->
-                <!-- cart drop down -->
-                <div
-                  class="dropdown-menu cart"
-                  aria-labelledby="dropdownMenuButton1"
-                >
-                  <div
-                    class="row d-flex justify-content-center align-items-center h-100"
-                  >
-                    <div class="col">
-                      <div
-                        class="card shopping-cart"
-                        style="border-radius: 15px"
-                      >
-                        <div class="card-body text-black">
-                          <div class="row">
-                            <div class="col px-2 py-2 px-md-5 py-md-4">
-                              <h3
-                                class="mb-5 pt-2 text-center fw-bold text-uppercase"
-                              >
-                                Items you rented
-                              </h3>
-                              <!-- Load cart items here -->
-                              <div id="cartItems"></div>
-
-                              <hr
-                                class="mb-4"
-                                style="
-                                  height: 2px;
-                                  background-color: #1266f1;
-                                  opacity: 1;
-                                "
-                              />
-
-                              <div class="d-flex justify-content-between px-x">
-                                <p class="fw-bold">Discount:</p>
-                                <p class="fw-bold">$</p>
-                              </div>
-                              <div
-                                class="d-flex justify-content-between p-2 mb-2"
-                                style="background-color: #e1f5fe"
-                              >
-                                <h5 class="fw-bold mb-0">Total:</h5>
-                                <h5 class="fw-bold mb-0">$</h5>
-                              </div>
-                            </div>
-
-                            <button
-                              type="button"
-                              class="btn btn-primary btn-block checkout-btn"
-                            >
-                              Go to checkout
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- cart dropdown close -->
-              <div class="dropdown">
-                <a
-                  class="nav-icon position-relative text-decoration-none dropdown-toggle"
-                  data-bs-auto-close="outside"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                  <li>
-                    <a class="dropdown-item" href="../html/profile.html"
-                      >Profile</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" onclick="logoutAction()" href="#"
-                      >Logout</a
-                    >
-                  </li>
-                  <!-- <li><a class="dropdown-item" href="#"></a></li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div class="benefits-heading">
       <h2>Our Benefits</h2>
     </div>
@@ -487,6 +328,23 @@
       </div>
     </footer>
     <!-- End Footer -->
+      <script src="https://kit.fontawesome.com/d8c50744cf.js" crossorigin="anonymous"></script>
+      <!-- Bootstrap js file -->
+      <script src="../js/popper.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <!-- jquery -->
+      <script src="../js/jquery-3.7.0.min.js"></script>
+      <!-- slick for carousel -->
+      <script src="../js/slick-min.js"></script>
+       <!-- slick slider for brands slider -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+       <script src="../js//slick-slider.js"></script>
+       <!-- dropdown toggle -->
+       <script src="../js/dropdown-toggle.js"></script>
+    <script src="../js/navView.js"></script>
+    <script src="../js/loginAuth.js"></script>
+    <script src="../js/cart.js"></script>
     <script src="../js/about_us.js"></script>
   </body>
 </html>
