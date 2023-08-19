@@ -84,9 +84,12 @@ function createCarCard(brandData, index, imageSrc) {
   const carCard = document.createElement("div");
   carCard.className = "col-md-4";
   carCard.innerHTML = `
+  
     <div class="card mb-4 product-wap rounded-0">
         <div class="card rounded-0">
+        <a href="product-details.html">
             <img class="card-img rounded-0 img-fluid" src="${imageSrc}" style="height: 200px; object-fit: cover;">
+            </a>
             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                 <ul class="list-unstyled">
                     <li><a class="btn btn-success text-white" href="#"><i class="far fa-heart"></i></a></li>
@@ -104,7 +107,7 @@ function createCarCard(brandData, index, imageSrc) {
             <p class="text-center mb-0">${brandData.price[index]}</p>
         </div>
     </div>
-  </div>`;
+  `;
   return carCard;
 }
 

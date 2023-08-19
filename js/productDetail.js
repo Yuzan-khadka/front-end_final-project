@@ -20,7 +20,7 @@ function loadCarDetailById(carId) {
                 document.getElementById("car-rent-price").textContent = product.price;
                 document.getElementById("car-rating").innerHTML = loadStar(product.rating);
                 document.getElementById("car-model").textContent = product.model;
-                document.getElementById("car-description").textContent = product.description;
+                // document.getElementById("car-description").textContent = product.description;
                 document.getElementById("car-quantity").textContent = product.quantity;
                 document.getElementById("car-title").textContent = product.title;
                 document.getElementById('addToCart').value = product.id;
