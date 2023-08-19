@@ -99,16 +99,20 @@
 
 /* featured product card */
 .featured-product .card .card-img-top{
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease;
     scale: 0.9;
 }
 
 .featured-product .card .card-img-top:hover{
-    scale: 1.1;
+    scale: 1.01;
+    transition: transform 0.5s ease;
+
 }
 
 .featured-product .card:hover .card-img-top {
-    transform: scale(1.1);
+    transform: scale(1.01);
+    transition: transform 0.5s ease-;
+
 }
 
 
