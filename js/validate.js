@@ -24,7 +24,7 @@ function checkEmail(event){
     console.log(checkIfEmailExist(emailValue), emailValue)
     if(!isValidEmail(emailValue)){
         error.textContent = "Invalid email format."
-    }else if(checkIfEmailExist(emailValue)){
+    }else if(!checkIfEmailExist(emailValue)){
         error.textContent = "Email already exist, Try another."
         emailField.value = ""
     }else{
@@ -33,8 +33,9 @@ function checkEmail(event){
 }
 // function to check if email already exist
 function checkIfEmailExist(email){
-    const existingData = JSON.parse(localStorage.getItem("Registered " + email)) || []
-    if (existingData){
+    const existingData = localStorage.getItem("Registered " + email) || []
+
+    if (typeof(existingData) == 'object'){
         return true
     }else{
         return false
